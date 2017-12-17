@@ -14,7 +14,7 @@ class User {
     var customMeditationLengths: [Int] = [];
     
     func isAllowedToAccessLevel(requestedLevel: Int) -> (Bool) {
-        return requestedLevel < completedTrackLevel - 1;
+        return requestedLevel <= completedTrackLevel + 1;
     }
     
     func completedTrack(trackNumber: Int) {

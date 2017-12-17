@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460675B41FE723EE00E071E1 /* 04_TopToBottom2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A21FE723EC00E071E1 /* 04_TopToBottom2.wav */; };
+		460675B51FE723EE00E071E1 /* 01_Shamatha2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A31FE723EC00E071E1 /* 01_Shamatha2.wav */; };
+		460675B61FE723EE00E071E1 /* 07_Sweeping2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A41FE723EC00E071E1 /* 07_Sweeping2.wav */; };
+		460675B71FE723EE00E071E1 /* 03_FocusedAnapana2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A51FE723EC00E071E1 /* 03_FocusedAnapana2.wav */; };
+		460675B81FE723EE00E071E1 /* 07_Sweeping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A61FE723EC00E071E1 /* 07_Sweeping.wav */; };
+		460675B91FE723EE00E071E1 /* 03_FocusedAnapana.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A71FE723ED00E071E1 /* 03_FocusedAnapana.wav */; };
+		460675BA1FE723EE00E071E1 /* 01_Shamatha.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A81FE723ED00E071E1 /* 01_Shamatha.wav */; };
+		460675BB1FE723EE00E071E1 /* 08_InTheMoment2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675A91FE723ED00E071E1 /* 08_InTheMoment2.wav */; };
+		460675BC1FE723EE00E071E1 /* 06_Symmetrical.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675AA1FE723ED00E071E1 /* 06_Symmetrical.wav */; };
+		460675BD1FE723EE00E071E1 /* MetaPana.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675AB1FE723ED00E071E1 /* MetaPana.wav */; };
+		460675BE1FE723EE00E071E1 /* Introduction.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675AC1FE723ED00E071E1 /* Introduction.wav */; };
+		460675BF1FE723EE00E071E1 /* 02_Anapana.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675AD1FE723ED00E071E1 /* 02_Anapana.wav */; };
+		460675C01FE723EE00E071E1 /* 02_Anapana2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675AE1FE723ED00E071E1 /* 02_Anapana2.wav */; };
+		460675C11FE723EE00E071E1 /* 04_TopToBottom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675AF1FE723ED00E071E1 /* 04_TopToBottom.wav */; };
+		460675C21FE723EE00E071E1 /* 06_Symmetrical2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675B01FE723ED00E071E1 /* 06_Symmetrical2.wav */; };
+		460675C31FE723EE00E071E1 /* 05_TopToBottomBottomToTop2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675B11FE723EE00E071E1 /* 05_TopToBottomBottomToTop2.wav */; };
+		460675C41FE723EE00E071E1 /* 05_TopToBottomBottomToTop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675B21FE723EE00E071E1 /* 05_TopToBottomBottomToTop.wav */; };
+		460675C51FE723EE00E071E1 /* 08_InTheMoment.wav in Resources */ = {isa = PBXBuildFile; fileRef = 460675B31FE723EE00E071E1 /* 08_InTheMoment.wav */; };
 		4630ECF51FE70CA50066D5E5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630ECF41FE70CA50066D5E5 /* Track.swift */; };
 		4630ECF71FE712350066D5E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630ECF61FE712350066D5E5 /* User.swift */; };
 		4630ECFA1FE713E70066D5E5 /* VipassanaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */; };
@@ -37,6 +55,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460675A21FE723EC00E071E1 /* 04_TopToBottom2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 04_TopToBottom2.wav; sourceTree = "<group>"; };
+		460675A31FE723EC00E071E1 /* 01_Shamatha2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 01_Shamatha2.wav; sourceTree = "<group>"; };
+		460675A41FE723EC00E071E1 /* 07_Sweeping2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 07_Sweeping2.wav; sourceTree = "<group>"; };
+		460675A51FE723EC00E071E1 /* 03_FocusedAnapana2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 03_FocusedAnapana2.wav; sourceTree = "<group>"; };
+		460675A61FE723EC00E071E1 /* 07_Sweeping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 07_Sweeping.wav; sourceTree = "<group>"; };
+		460675A71FE723ED00E071E1 /* 03_FocusedAnapana.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 03_FocusedAnapana.wav; sourceTree = "<group>"; };
+		460675A81FE723ED00E071E1 /* 01_Shamatha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 01_Shamatha.wav; sourceTree = "<group>"; };
+		460675A91FE723ED00E071E1 /* 08_InTheMoment2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 08_InTheMoment2.wav; sourceTree = "<group>"; };
+		460675AA1FE723ED00E071E1 /* 06_Symmetrical.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 06_Symmetrical.wav; sourceTree = "<group>"; };
+		460675AB1FE723ED00E071E1 /* MetaPana.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MetaPana.wav; sourceTree = "<group>"; };
+		460675AC1FE723ED00E071E1 /* Introduction.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Introduction.wav; sourceTree = "<group>"; };
+		460675AD1FE723ED00E071E1 /* 02_Anapana.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 02_Anapana.wav; sourceTree = "<group>"; };
+		460675AE1FE723ED00E071E1 /* 02_Anapana2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 02_Anapana2.wav; sourceTree = "<group>"; };
+		460675AF1FE723ED00E071E1 /* 04_TopToBottom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 04_TopToBottom.wav; sourceTree = "<group>"; };
+		460675B01FE723ED00E071E1 /* 06_Symmetrical2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 06_Symmetrical2.wav; sourceTree = "<group>"; };
+		460675B11FE723EE00E071E1 /* 05_TopToBottomBottomToTop2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 05_TopToBottomBottomToTop2.wav; sourceTree = "<group>"; };
+		460675B21FE723EE00E071E1 /* 05_TopToBottomBottomToTop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 05_TopToBottomBottomToTop.wav; sourceTree = "<group>"; };
+		460675B31FE723EE00E071E1 /* 08_InTheMoment.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 08_InTheMoment.wav; sourceTree = "<group>"; };
 		4630ECF41FE70CA50066D5E5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		4630ECF61FE712350066D5E5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipassanaManager.swift; sourceTree = "<group>"; };
@@ -100,6 +136,24 @@
 		4630ECFC1FE71C660066D5E5 /* AudioAssets */ = {
 			isa = PBXGroup;
 			children = (
+				460675A81FE723ED00E071E1 /* 01_Shamatha.wav */,
+				460675A31FE723EC00E071E1 /* 01_Shamatha2.wav */,
+				460675AD1FE723ED00E071E1 /* 02_Anapana.wav */,
+				460675AE1FE723ED00E071E1 /* 02_Anapana2.wav */,
+				460675A71FE723ED00E071E1 /* 03_FocusedAnapana.wav */,
+				460675A51FE723EC00E071E1 /* 03_FocusedAnapana2.wav */,
+				460675AF1FE723ED00E071E1 /* 04_TopToBottom.wav */,
+				460675A21FE723EC00E071E1 /* 04_TopToBottom2.wav */,
+				460675B21FE723EE00E071E1 /* 05_TopToBottomBottomToTop.wav */,
+				460675B11FE723EE00E071E1 /* 05_TopToBottomBottomToTop2.wav */,
+				460675AA1FE723ED00E071E1 /* 06_Symmetrical.wav */,
+				460675B01FE723ED00E071E1 /* 06_Symmetrical2.wav */,
+				460675A61FE723EC00E071E1 /* 07_Sweeping.wav */,
+				460675A41FE723EC00E071E1 /* 07_Sweeping2.wav */,
+				460675B31FE723EE00E071E1 /* 08_InTheMoment.wav */,
+				460675A91FE723ED00E071E1 /* 08_InTheMoment2.wav */,
+				460675AC1FE723ED00E071E1 /* Introduction.wav */,
+				460675AB1FE723ED00E071E1 /* MetaPana.wav */,
 			);
 			path = AudioAssets;
 			sourceTree = "<group>";
@@ -265,9 +319,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460675C21FE723EE00E071E1 /* 06_Symmetrical2.wav in Resources */,
+				460675B71FE723EE00E071E1 /* 03_FocusedAnapana2.wav in Resources */,
 				46E6CB531FE6EA3200F09C38 /* LaunchScreen.storyboard in Resources */,
+				460675BD1FE723EE00E071E1 /* MetaPana.wav in Resources */,
+				460675BF1FE723EE00E071E1 /* 02_Anapana.wav in Resources */,
+				460675BA1FE723EE00E071E1 /* 01_Shamatha.wav in Resources */,
+				460675C51FE723EE00E071E1 /* 08_InTheMoment.wav in Resources */,
 				46E6CB501FE6EA3200F09C38 /* Assets.xcassets in Resources */,
+				460675B81FE723EE00E071E1 /* 07_Sweeping.wav in Resources */,
+				460675B51FE723EE00E071E1 /* 01_Shamatha2.wav in Resources */,
 				46E6CB4E1FE6EA3200F09C38 /* Main.storyboard in Resources */,
+				460675B91FE723EE00E071E1 /* 03_FocusedAnapana.wav in Resources */,
+				460675C11FE723EE00E071E1 /* 04_TopToBottom.wav in Resources */,
+				460675C31FE723EE00E071E1 /* 05_TopToBottomBottomToTop2.wav in Resources */,
+				460675B61FE723EE00E071E1 /* 07_Sweeping2.wav in Resources */,
+				460675BC1FE723EE00E071E1 /* 06_Symmetrical.wav in Resources */,
+				460675C41FE723EE00E071E1 /* 05_TopToBottomBottomToTop.wav in Resources */,
+				460675B41FE723EE00E071E1 /* 04_TopToBottom2.wav in Resources */,
+				460675BE1FE723EE00E071E1 /* Introduction.wav in Resources */,
+				460675C01FE723EE00E071E1 /* 02_Anapana2.wav in Resources */,
+				460675BB1FE723EE00E071E1 /* 08_InTheMoment2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

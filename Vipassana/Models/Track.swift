@@ -11,65 +11,90 @@ import AVKit
 
 class Track {
     
-    //General Properties
-    var name: String;
-    var part1Length: Int
-    var part1Url: URL
-    var part2Length: Int?
-    var part2Url: URL?
+    let name: String;
+    var currentPosition = 0
+    var isPaused = false
     
-    var part1Asset: AVAsset
-    var part2Asset: AVAsset?
-    
-    //Tracks accessibility
-    var isEnabled: Bool
-    
+    let part1Duration: Int
+    let part1Url: URL
+    let part1Asset: AVAsset
     let part1Item: AVPlayerItem
-    let part2Item: AVPlayerItem?
-
     let playerPart1: AVPlayer
+    let gapDuration: Int
+    let totalDuration: Int
+
+    let part2Duration: Int?
+    let part2Url: URL?
+    let part2Asset: AVAsset?
+    let part2Item: AVPlayerItem?
     let playerPart2: AVPlayer?
     
-    init(name: String, part1Length: Int, part1Url: URL, part2Length: Int?, part2Url: URL?) {
+    init(name: String, part1Url: URL, part2Url: URL?, gapDuration: Int?) {
         self.name = name
-        self.part1Length = part1Length
         self.part1Url = part1Url
-        self.part2Length = part2Length
-        self.part2Url = part2Url
-
-        self.isEnabled = false
         
         //initialize the audio files
-        part1Asset = AVAsset(url: part1Url)
-        if (part2Url != nil) {
-            part2Asset = AVAsset(url: part2Url!)
-        }
-
         let assetKeys = [
             "playable",
             "hasProtectedContent"
         ]
-        
-        part1Item = AVPlayerItem(asset: part1Asset,
-                                  automaticallyLoadedAssetKeys: assetKeys)
-        
-        if (part2Asset != nil) {
-            part2Item = AVPlayerItem(asset: part2Asset!,
-                                     automaticallyLoadedAssetKeys: assetKeys)
-        }
 
-//        part1Item.addObserver(self,
-//                               forKeyPath: #keyPath(AVPlayerItem.status),
-//                               options: [.old, .new],
-//                               context: &playerItemContext)
-//        part2Item.addObserver(self,
-//                              forKeyPath: #keyPath(AVPlayerItem.status),
-//                              options: [.old, .new],
-//                              context: &playerItemContext)
-        
-        playerPart1 = AVPlayer(playerItem: part1Item)
-        if (part2Item != nil) {
-            playerPart2 = AVPlayer(playerItem: part2Item!)
+        self.part1Asset = AVAsset(url: part1Url)
+        self.part1Item = AVPlayerItem(asset: part1Asset,
+                                 automaticallyLoadedAssetKeys: assetKeys)
+        self.part1Duration = Int(self.part1Item.duration.seconds)
+        //        part1Item.addObserver(self,
+        //                               forKeyPath: #keyPath(AVPlayerItem.status),
+        //                               options: [.old, .new],
+        //                               context: &playerItemContext)
+        self.playerPart1 = AVPlayer(playerItem: part1Item)
+
+        if (part2Url != nil) {
+            self.part2Url = part2Url
+            self.part2Asset = AVAsset(url: part2Url!)
+            self.part2Duration = Int(part2Asset!.duration.seconds)
+            self.part2Item = AVPlayerItem(asset: part2Asset!,
+                                     automaticallyLoadedAssetKeys: assetKeys)
+            //        part2Item.addObserver(self,
+            //                              forKeyPath: #keyPath(AVPlayerItem.status),
+            //                              options: [.old, .new],
+            //                              context: &playerItemContext)
+            self.playerPart2 = AVPlayer(playerItem: part2Item!)
+            self.gapDuration = gapDuration!
+            self.totalDuration = self.gapDuration + self.part1Duration + self.part2Duration!
+        } else {
+            self.part2Duration = nil
+            self.part2Url = nil
+            self.part2Asset = nil;
+            self.part2Item = nil;
+            self.playerPart2 = nil;
+            self.gapDuration = 0
+            self.totalDuration = self.part1Duration
+        }
+    }
+    
+    public func playFromBeginning() {
+        self.isPaused = false
+    }
+    
+    func pause() {
+        self.isPaused = true
+    }
+    
+    func resume() {
+        self.isPaused = false
+    }
+
+    public func stop() {
+        currentPosition = 0;
+        self.isPaused = false
+    }
+    
+    public func pauseOrResume() {
+        if (self.isPaused) {
+            self.resume()
+        } else {
+            self.pause()
         }
     }
     
