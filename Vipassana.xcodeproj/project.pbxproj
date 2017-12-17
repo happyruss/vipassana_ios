@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4630ECF51FE70CA50066D5E5 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630ECF41FE70CA50066D5E5 /* Track.swift */; };
+		4630ECF71FE712350066D5E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630ECF61FE712350066D5E5 /* User.swift */; };
+		4630ECFA1FE713E70066D5E5 /* VipassanaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */; };
 		46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */; };
 		46E6CB4B1FE6EA3200F09C38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */; };
 		46E6CB4E1FE6EA3200F09C38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E6CB4C1FE6EA3200F09C38 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4630ECF41FE70CA50066D5E5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		4630ECF61FE712350066D5E5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipassanaManager.swift; sourceTree = "<group>"; };
 		46E6CB451FE6EA3200F09C38 /* Vipassana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vipassana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4630ECF31FE70C7B0066D5E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4630ECF41FE70CA50066D5E5 /* Track.swift */,
+				4630ECF61FE712350066D5E5 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4630ECF81FE713CB0066D5E5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4630ECFC1FE71C660066D5E5 /* AudioAssets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AudioAssets;
+			sourceTree = "<group>";
+		};
 		46E6CB3C1FE6EA3200F09C38 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +127,9 @@
 		46E6CB471FE6EA3200F09C38 /* Vipassana */ = {
 			isa = PBXGroup;
 			children = (
+				4630ECFC1FE71C660066D5E5 /* AudioAssets */,
+				4630ECF81FE713CB0066D5E5 /* Managers */,
+				4630ECF31FE70C7B0066D5E5 /* Models */,
 				46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */,
 				46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */,
 				46E6CB4C1FE6EA3200F09C38 /* Main.storyboard */,
@@ -259,8 +292,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4630ECF71FE712350066D5E5 /* User.swift in Sources */,
+				4630ECFA1FE713E70066D5E5 /* VipassanaManager.swift in Sources */,
 				46E6CB4B1FE6EA3200F09C38 /* ViewController.swift in Sources */,
 				46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */,
+				4630ECF51FE70CA50066D5E5 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
