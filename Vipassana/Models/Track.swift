@@ -11,6 +11,7 @@ import AVKit
 
 protocol TrackDelegate: class {
     func trackTimeRemainingUpdated(timeRemaining: Int)
+    func trackEnded()
 }
 
 class Track {
@@ -76,6 +77,11 @@ class Track {
     @objc func update() {
         self.remainingTime = self.remainingTime - 1
         delegate?.trackTimeRemainingUpdated(timeRemaining: self.remainingTime)
+        
+        guard self.remainingTime > 0 else {
+            delegate?.trackEnded()
+            return
+        }
 
         if (self.totalDuration - self.remainingTime < self.part1Duration) {
             if (self.playerPart1.rate != 0 && self.playerPart1.error == nil) {
@@ -90,7 +96,7 @@ class Track {
         guard self.part2Duration != nil else {
             return
         }
-        guard self.remainingTime < (self.part2Duration! + 3) else {
+        guard self.remainingTime < (self.part2Duration! + 1) else {
             return
         }
         

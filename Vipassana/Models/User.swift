@@ -17,8 +17,4 @@ class User {
         return requestedLevel <= completedTrackLevel + 1;
     }
     
-    func completedTrack(trackNumber: Int) {
-        completedTrackLevel = trackNumber
-    }
-    
 }

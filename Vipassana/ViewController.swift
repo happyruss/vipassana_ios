@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, TrackDelegate {
 
     let vipassanaManager = VipassanaManager.shared
     
+    @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var playPauseLabel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +26,24 @@ class ViewController: UIViewController {
     
     @IBAction func didTapDemoButton(_ sender: Any) {
         var returnVal = vipassanaManager.playTrackAtLevel(trackLevel: 1, gapDuration: 30)
+        if (returnVal) {
+            vipassanaManager.activeTrack?.delegate = self
+            playPauseLabel.isHidden = false
+        }
     }
 
+    @IBAction func didTapPlayPause(_ sender: Any) {
+        vipassanaManager.pauseOrResume()
+    }
+    
+    func trackTimeRemainingUpdated(timeRemaining: Int) {
+//        countdownLabel.text = String(timeRemaining)
+        countdownLabel.text = "\(timeRemaining / 3600) : \((timeRemaining % 3600) / 60) : \((timeRemaining % 3600) % 60)"
+    }
+
+    func trackEnded() {
+        vipassanaManager.userCompletedTrack()
+        playPauseLabel.isHidden = true
+    }
 }
 

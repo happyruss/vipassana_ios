@@ -13,13 +13,12 @@ class VipassanaManager {
     public static var shared = VipassanaManager()
     let user: User
     var activeTrack: Track?
-    
-    public init() {
-        let defaults = UserDefaults()
-        
-        //init the user
+    var activeTrackLevel = 0
+    let defaults = UserDefaults()
+
+    public init() {        
         self.user = User()
-        self.user.completedTrack(trackNumber: defaults.integer(forKey: "SavedCompletedLevel"))
+        self.user.completedTrackLevel = defaults.integer(forKey: "SavedCompletedLevel")
         if let savedCustomMeditationLengths = defaults.array(forKey: "SavedCustomMeditationLengths") {
             self.user.customMeditationLengths = savedCustomMeditationLengths as! [Int]
         }
@@ -30,9 +29,11 @@ class VipassanaManager {
         if (activeTrack != nil) {
             activeTrack!.stop()
             activeTrack = nil
+            activeTrackLevel = 0
         }
         
         if (self.user.isAllowedToAccessLevel(requestedLevel: trackLevel)) {
+            self.activeTrackLevel = trackLevel
             switch trackLevel {
             case 0:
                 activeTrack = Track(name: "Introduction", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "Introduction", ofType: "wav")!), part2Url: nil, gapDuration: gapDuration)
@@ -87,6 +88,13 @@ class VipassanaManager {
         }
         activeTrack!.stop()
         activeTrack = nil
+    }
+    
+    public func userCompletedTrack() {
+        if (activeTrackLevel > self.user.completedTrackLevel) {
+            self.user.completedTrackLevel = activeTrackLevel
+            defaults.set(activeTrackLevel, forKey: "SavedCompletedLevel")
+        }
     }
     
 }
