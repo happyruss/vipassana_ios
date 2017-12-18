@@ -12,12 +12,12 @@ import AVKit
 class TrackTemplate {
     
     let name: String;
-    let part1Duration: Int
     let part1Url: URL
+    let part1Duration: Int
     let part1Asset: AVAsset
     
-    let part2Duration: Int?
     let part2Url: URL?
+    let part2Duration: Int?
     let part2Asset: AVAsset?
 
     let minimumDuration: Int

@@ -16,19 +16,19 @@ protocol TrackDelegate: class {
 
 class Track {
     
-    var remainingTime = 0
-    var isPaused = false
-    var timer = Timer()
+    fileprivate var remainingTime = 0
+    fileprivate var isPaused = false
+    fileprivate var timer = Timer()
     
-    let trackTemplate: TrackTemplate
+    fileprivate let trackTemplate: TrackTemplate
     
-    let part1Item: AVPlayerItem
-    let playerPart1: AVPlayer
-    let gapDuration: Int
-    let totalDuration: Int
+    fileprivate let part1Item: AVPlayerItem
+    fileprivate let playerPart1: AVPlayer
+    fileprivate let gapDuration: Int
+    fileprivate let totalDuration: Int
 
-    let part2Item: AVPlayerItem?
-    let playerPart2: AVPlayer?
+    fileprivate let part2Item: AVPlayerItem?
+    fileprivate let playerPart2: AVPlayer?
     
     weak var delegate: TrackDelegate?
     

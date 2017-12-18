@@ -11,10 +11,12 @@ import Foundation
 class VipassanaManager {
     
     public static var shared = VipassanaManager()
+    
     let user: User
     var activeTrack: Track?
-    var activeTrackLevel = 0
-    let defaults = UserDefaults()
+    fileprivate var activeTrackLevel = 0
+    fileprivate let defaults = UserDefaults()
+
     let trackTemplateFactory = TrackTemplateFactory.shared
     
     public init() {
