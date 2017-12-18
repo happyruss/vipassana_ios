@@ -27,15 +27,15 @@ class TrackTemplateFactory {
 
         trackTemplates.append(TrackTemplate(name: "Top To Bottom Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "04_TopToBottom", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "04_TopToBottom2", ofType: "wav")!)))
 
-        trackTemplates.append(TrackTemplate(name: "Top To Bottom Bottom To Top Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "05_TopToBottomBottomToTop", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "05_TopToBottomBottomToTop2", ofType: "wav")!)))
+        trackTemplates.append(TrackTemplate(name: "Part By Part Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "05_TopToBottomBottomToTop", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "05_TopToBottomBottomToTop2", ofType: "wav")!)))
 
         trackTemplates.append(TrackTemplate(name: "Symmetrical Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "06_Symmetrical", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "06_Symmetrical2", ofType: "wav")!)))
 
         trackTemplates.append(TrackTemplate(name: "Sweeping Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "07_Sweeping", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "07_Sweeping2", ofType: "wav")!)))
 
-        trackTemplates.append(TrackTemplate(name: "Sweeping Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment2", ofType: "wav")!)))
+        trackTemplates.append(TrackTemplate(name: "In the Moment Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment", ofType: "wav")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment2", ofType: "wav")!)))
 
-        trackTemplates.append(TrackTemplate(name: "Introduction", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "MetaPana", ofType: "wav")!), part2Url: nil))
+        trackTemplates.append(TrackTemplate(name: "Mettā", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "MetaPana", ofType: "wav")!), part2Url: nil))
         
         trackTemplates.forEach { (trackTemplate) in
             if(trackTemplate.minimumDuration > minimumTrackDuration) {
