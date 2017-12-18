@@ -70,4 +70,9 @@ class VipassanaManager {
         }
     }
     
+    public func setDefaultDurationMinutes(durationMinutes: Int) {
+        defaults.setValue(durationMinutes, forKey: "SavedCustomMeditationDurationMinutes")
+        self.user.customMeditationDurationMinutes = durationMinutes
+    }
+    
 }
