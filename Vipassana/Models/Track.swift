@@ -9,11 +9,16 @@
 import Foundation
 import AVKit
 
+protocol TrackDelegate: class {
+    func trackTimeRemainingUpdated(timeRemaining: Int)
+}
+
 class Track {
     
     let name: String;
-    var currentPosition = 0
+    var remainingTime = 0
     var isPaused = false
+    var timer = Timer()
     
     let part1Duration: Int
     let part1Url: URL
@@ -29,6 +34,8 @@ class Track {
     let part2Item: AVPlayerItem?
     let playerPart2: AVPlayer?
     
+    weak var delegate: TrackDelegate?
+    
     init(name: String, part1Url: URL, part2Url: URL?, gapDuration: Int?) {
         self.name = name
         self.part1Url = part1Url
@@ -42,23 +49,15 @@ class Track {
         self.part1Asset = AVAsset(url: part1Url)
         self.part1Item = AVPlayerItem(asset: part1Asset,
                                  automaticallyLoadedAssetKeys: assetKeys)
-        self.part1Duration = Int(self.part1Item.duration.seconds)
-        //        part1Item.addObserver(self,
-        //                               forKeyPath: #keyPath(AVPlayerItem.status),
-        //                               options: [.old, .new],
-        //                               context: &playerItemContext)
+        self.part1Duration = Int(CMTimeGetSeconds(self.part1Asset.duration));
         self.playerPart1 = AVPlayer(playerItem: part1Item)
 
         if (part2Url != nil) {
             self.part2Url = part2Url
             self.part2Asset = AVAsset(url: part2Url!)
-            self.part2Duration = Int(part2Asset!.duration.seconds)
+            self.part2Duration = Int(CMTimeGetSeconds(self.part2Asset!.duration));
             self.part2Item = AVPlayerItem(asset: part2Asset!,
                                      automaticallyLoadedAssetKeys: assetKeys)
-            //        part2Item.addObserver(self,
-            //                              forKeyPath: #keyPath(AVPlayerItem.status),
-            //                              options: [.old, .new],
-            //                              context: &playerItemContext)
             self.playerPart2 = AVPlayer(playerItem: part2Item!)
             self.gapDuration = gapDuration!
             self.totalDuration = self.gapDuration + self.part1Duration + self.part2Duration!
@@ -71,23 +70,62 @@ class Track {
             self.gapDuration = 0
             self.totalDuration = self.part1Duration
         }
+        self.remainingTime = self.totalDuration;
+    }
+    
+    @objc func update() {
+        self.remainingTime = self.remainingTime - 1
+        delegate?.trackTimeRemainingUpdated(timeRemaining: self.remainingTime)
+
+        if (self.totalDuration - self.remainingTime < self.part1Duration) {
+            if (self.playerPart1.rate != 0 && self.playerPart1.error == nil) {
+            } else {
+                self.playerPart1.play()
+            }
+        }
+        
+        guard self.remainingTime > 0 else {
+            return
+        }
+        guard self.part2Duration != nil else {
+            return
+        }
+        guard self.remainingTime < (self.part2Duration! + 3) else {
+            return
+        }
+        
+        if (self.playerPart2!.rate != 0 && self.playerPart2!.error == nil) {
+        } else {
+            self.playerPart2?.play()
+        }
     }
     
     public func playFromBeginning() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         self.isPaused = false
+        self.playerPart1.play()
     }
     
     func pause() {
+        timer.invalidate()
         self.isPaused = true
+        if (self.playerPart1.rate != 0 && self.playerPart1.error == nil) {
+            self.playerPart1.pause()
+        }
+        if (self.playerPart2?.rate != 0 && self.playerPart2?.error == nil) {
+            self.playerPart2!.pause()
+        }
     }
     
     func resume() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         self.isPaused = false
     }
 
     public func stop() {
-        currentPosition = 0;
+        self.remainingTime = self.totalDuration;
         self.isPaused = false
+        timer.invalidate()
     }
     
     public func pauseOrResume() {

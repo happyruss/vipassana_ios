@@ -21,7 +21,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func didTapDemoButton(_ sender: Any) {
+        var returnVal = vipassanaManager.playTrackAtLevel(trackLevel: 1, gapDuration: 30)
+    }
 
 }
 
