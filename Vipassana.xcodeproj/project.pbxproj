@@ -35,6 +35,8 @@
 		46E6CB531FE6EA3200F09C38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E6CB511FE6EA3200F09C38 /* LaunchScreen.storyboard */; };
 		46E6CB5E1FE6EA3200F09C38 /* VipassanaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB5D1FE6EA3200F09C38 /* VipassanaTests.swift */; };
 		46E6CB691FE6EA3200F09C38 /* VipassanaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB681FE6EA3200F09C38 /* VipassanaUITests.swift */; };
+		46FD68DB1FE8545800427F9C /* TrackTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD68DA1FE8545800427F9C /* TrackTemplate.swift */; };
+		46FD68DD1FE8546300427F9C /* TrackTemplateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD68DC1FE8546300427F9C /* TrackTemplateFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		46E6CB641FE6EA3200F09C38 /* VipassanaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VipassanaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E6CB681FE6EA3200F09C38 /* VipassanaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipassanaUITests.swift; sourceTree = "<group>"; };
 		46E6CB6A1FE6EA3200F09C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46FD68DA1FE8545800427F9C /* TrackTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTemplate.swift; sourceTree = "<group>"; };
+		46FD68DC1FE8546300427F9C /* TrackTemplateFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTemplateFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 			children = (
 				4630ECF41FE70CA50066D5E5 /* Track.swift */,
 				4630ECF61FE712350066D5E5 /* User.swift */,
+				46FD68DA1FE8545800427F9C /* TrackTemplate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */,
+				46FD68DC1FE8546300427F9C /* TrackTemplateFactory.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -368,7 +374,9 @@
 				4630ECFA1FE713E70066D5E5 /* VipassanaManager.swift in Sources */,
 				46E6CB4B1FE6EA3200F09C38 /* ViewController.swift in Sources */,
 				46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */,
+				46FD68DD1FE8546300427F9C /* TrackTemplateFactory.swift in Sources */,
 				4630ECF51FE70CA50066D5E5 /* Track.swift in Sources */,
+				46FD68DB1FE8545800427F9C /* TrackTemplate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
