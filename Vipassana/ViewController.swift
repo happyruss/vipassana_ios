@@ -27,7 +27,7 @@ class ViewController: UIViewController, TrackDelegate {
     func runMeditation(trackLevel: Int, totalDurationSeconds: Int) {
         let trackTemplate = vipassanaManager.trackTemplateFactory.trackTemplates[trackLevel]
         let gapDuration = totalDurationSeconds - trackTemplate.minimumDuration
-        let returnVal = vipassanaManager.playTrackAtLevel(trackLevel: 1, gapDuration: gapDuration)
+        let returnVal = vipassanaManager.playTrackAtLevel(trackLevel: trackLevel, gapDuration: gapDuration)
         if (returnVal) {
             vipassanaManager.activeTrack?.delegate = self
             playPauseLabel.isHidden = false
