@@ -31,23 +31,16 @@ class VipassanaManager {
         self.user.customMeditationDurationMinutes = savedCustomMeditationDurationMinutes
     }
     
-    public func playTrackAtLevel(trackLevel: Int, gapDuration: Int) -> (Bool) {
-        
+    public func playTrackAtLevel(trackLevel: Int, gapDuration: Int) {
         if (self.activeTrack != nil) {
             self.activeTrack!.stop()
             self.activeTrack = nil
             self.activeTrackLevel = 0
         }
-        
-        if (self.user.isAllowedToAccessLevel(requestedLevel: trackLevel)) {
-            self.activeTrackLevel = trackLevel
-            let trackTemplate = trackTemplateFactory.trackTemplates[trackLevel]
-            self.activeTrack = Track(trackTemplate: trackTemplate, gapDuration: gapDuration)
-            self.activeTrack!.playFromBeginning()
-            return true
-        } else {
-            return false
-        }
+        self.activeTrackLevel = trackLevel
+        let trackTemplate = trackTemplateFactory.trackTemplates[trackLevel]
+        self.activeTrack = Track(trackTemplate: trackTemplate, gapDuration: gapDuration)
+        self.activeTrack!.playFromBeginning()
     }
     
     public func pauseOrResume() {
