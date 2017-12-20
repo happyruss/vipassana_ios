@@ -98,26 +98,32 @@ class ViewController: UIViewController, TrackDelegate {
     }
     
     fileprivate func presentCountdownLengthAlert(_ trackLevel: Int) {
-        let minDurationSeconds = vipassanaManager.trackTemplateFactory.trackTemplates[trackLevel].minimumDuration
+        let trackTemplate = vipassanaManager.trackTemplateFactory.trackTemplates[trackLevel]
+        let minDurationSeconds = trackTemplate.minimumDuration
         let minDurationMinutes = minDurationSeconds / 60 + 1
-        
-        let alert = UIAlertController(title: "Meditate", message: "Select a meditation length", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "\(minDurationMinutes) Minutes", style: UIAlertActionStyle.default, handler: { action in
-            self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationMinutes * 60)
-        }))
-        alert.addAction(UIAlertAction(title: "60 Minutes", style: UIAlertActionStyle.default, handler: { action in
-            self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: 60 * 60)
-        }))
-        
-        if (self.vipassanaManager.user.customMeditationDurationMinutes > minDurationMinutes) {
-            alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.destructive, handler: { action in
-                self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: self.vipassanaManager.user.customMeditationDurationMinutes * 60)
+
+        if !trackTemplate.isMultiPart {
+            self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationSeconds)
+        } else {
+            
+            let alert = UIAlertController(title: "Meditate", message: "Select a meditation length", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "\(minDurationMinutes) Minutes", style: UIAlertActionStyle.default, handler: { action in
+                self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationMinutes * 60)
             }))
+            alert.addAction(UIAlertAction(title: "60 Minutes", style: UIAlertActionStyle.default, handler: { action in
+                self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: 60 * 60)
+            }))
+            
+            if (self.vipassanaManager.user.customMeditationDurationMinutes > minDurationMinutes) {
+                alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.destructive, handler: { action in
+                    self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: self.vipassanaManager.user.customMeditationDurationMinutes * 60)
+                }))
+            }
+            alert.addAction(UIAlertAction(title: "Custom Time", style: UIAlertActionStyle.cancel, handler: { action in
+                self.presentCustomCountdownAlert(trackLevel: trackLevel, minDurationMinutes: minDurationMinutes)
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
-        alert.addAction(UIAlertAction(title: "Custom Time", style: UIAlertActionStyle.cancel, handler: { action in
-            self.presentCustomCountdownAlert(trackLevel: trackLevel, minDurationMinutes: minDurationMinutes)
-        }))
-        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func didTapDemoButton(_ sender: Any) {

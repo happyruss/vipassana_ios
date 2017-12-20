@@ -45,7 +45,7 @@ class Track {
                                  automaticallyLoadedAssetKeys: assetKeys)
         self.playerPart1 = AVPlayer(playerItem: part1Item)
 
-        if (self.trackTemplate.part2Url != nil) {
+        if (self.trackTemplate.isMultiPart) {
             self.part2Item = AVPlayerItem(asset: trackTemplate.part2Asset!,
                                      automaticallyLoadedAssetKeys: assetKeys)
             self.playerPart2 = AVPlayer(playerItem: part2Item!)

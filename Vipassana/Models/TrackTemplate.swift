@@ -12,15 +12,17 @@ import AVKit
 class TrackTemplate {
     
     let name: String;
-    let part1Url: URL
+    fileprivate let part1Url: URL
     let part1Duration: Int
     let part1Asset: AVAsset
     
-    let part2Url: URL?
+    fileprivate let part2Url: URL?
     let part2Duration: Int?
     let part2Asset: AVAsset?
 
     let minimumDuration: Int
+    
+    let isMultiPart: Bool
     
     init(name: String, part1Url: URL, part2Url: URL?) {
         self.name = name
@@ -34,11 +36,13 @@ class TrackTemplate {
             self.part2Asset = AVAsset(url: part2Url!)
             self.part2Duration = Int(CMTimeGetSeconds(self.part2Asset!.duration));
             self.minimumDuration = self.part1Duration + self.part2Duration!
+            self.isMultiPart = true
         } else {
             self.part2Duration = nil
             self.part2Url = nil
             self.part2Asset = nil;
             self.minimumDuration = self.part1Duration
+            self.isMultiPart = false
         }
     }
     
