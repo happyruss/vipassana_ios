@@ -126,8 +126,8 @@ class ViewController: UIViewController, TrackDelegate {
         }
     }
     
-    @IBAction func didTapDemoButton(_ sender: Any) {
-        let trackLevel = 1
+    @IBAction func didTapMeditationButton(_ sender: UIButton) {
+        let trackLevel = sender.tag
         presentCountdownLengthAlert(trackLevel)
     }
 

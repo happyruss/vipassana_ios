@@ -79,7 +79,7 @@ class Track {
         guard self.remainingTime > 0 else {
             return
         }
-        guard self.trackTemplate.part2Duration != nil else {
+        guard self.trackTemplate.isMultiPart else {
             return
         }
         guard self.remainingTime < (self.trackTemplate.part2Duration! + 1) else {
@@ -104,8 +104,10 @@ class Track {
         if (self.playerPart1.rate != 0 && self.playerPart1.error == nil) {
             self.playerPart1.pause()
         }
-        if (self.playerPart2?.rate != 0 && self.playerPart2?.error == nil) {
-            self.playerPart2!.pause()
+        if (self.trackTemplate.isMultiPart) {
+            if (self.playerPart2?.rate != 0 && self.playerPart2?.error == nil) {
+                self.playerPart2!.pause()
+            }
         }
     }
     
