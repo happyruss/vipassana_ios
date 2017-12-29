@@ -100,7 +100,7 @@ class ViewController: UIViewController, TrackDelegate {
     fileprivate func presentCountdownLengthAlert(_ trackLevel: Int) {
         let trackTemplate = vipassanaManager.trackTemplateFactory.trackTemplates[trackLevel]
         let minDurationSeconds = trackTemplate.minimumDuration
-        let minDurationMinutes = minDurationSeconds / 60 + 1
+        let minDurationMinutes = minDurationSeconds / 60 + 2
 
         if !trackTemplate.isMultiPart {
             self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationSeconds)

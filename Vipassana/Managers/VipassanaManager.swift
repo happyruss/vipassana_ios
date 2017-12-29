@@ -59,9 +59,11 @@ class VipassanaManager {
     }
     
     public func userCompletedTrack() {
-        if (activeTrackLevel > self.user.completedTrackLevel) {
-            self.user.completedTrackLevel = activeTrackLevel
-            defaults.set(activeTrackLevel, forKey: "SavedCompletedLevel")
+        if (activeTrackLevel != 10) { //level 10 is just the timer
+            if (activeTrackLevel > self.user.completedTrackLevel) {
+                self.user.completedTrackLevel = activeTrackLevel
+                defaults.set(activeTrackLevel, forKey: "SavedCompletedLevel")
+            }
         }
     }
     
