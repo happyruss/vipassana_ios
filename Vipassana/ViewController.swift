@@ -26,6 +26,8 @@ class ViewController: UIViewController, TrackDelegate {
     @IBOutlet weak var inTheMomentVipassanaButton: UIButton!
     @IBOutlet weak var mettaButton: UIButton!
     
+    private var isInMeditation = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playPauseButton.isHidden = true
@@ -45,9 +47,9 @@ class ViewController: UIViewController, TrackDelegate {
         anapanaButton.isEnabled = enabledLevel >= 2
         focusedAnapanaButton.isEnabled = enabledLevel >= 3
         topToBottomVipassanaButton.isEnabled = enabledLevel >= 4
-        sweepingVipassanaButton.isEnabled = enabledLevel >= 5
+        scanningVipassanaButton.isEnabled = enabledLevel >= 5
         symmetricalVipassanaButton.isEnabled = enabledLevel >= 6
-        scanningVipassanaButton.isEnabled = enabledLevel >= 7
+        sweepingVipassanaButton.isEnabled = enabledLevel >= 7
         inTheMomentVipassanaButton.isEnabled = enabledLevel >= 8
         mettaButton.isEnabled = enabledLevel >= 9
     }
@@ -58,6 +60,7 @@ class ViewController: UIViewController, TrackDelegate {
         vipassanaManager.playTrackAtLevel(trackLevel: trackLevel, gapDuration: gapDuration)
         vipassanaManager.activeTrack?.delegate = self
         playPauseButton.isHidden = false
+        isInMeditation = true
     }
     
     fileprivate func presentInvalidCustomCountdownAlert(trackLevel: Int, minDurationMinutes: Int) {
@@ -126,9 +129,24 @@ class ViewController: UIViewController, TrackDelegate {
         }
     }
     
+    fileprivate func presentAlerts(_ trackLevel: Int) {
+        if (isInMeditation) {
+            let alert = UIAlertController(title: "Meditation Underway", message: "Would you like to stop the current session?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
+                self.presentCountdownLengthAlert(trackLevel)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            presentCountdownLengthAlert(trackLevel)
+        }
+    }
+    
     @IBAction func didTapMeditationButton(_ sender: UIButton) {
         let trackLevel = sender.tag
-        presentCountdownLengthAlert(trackLevel)
+        presentAlerts(trackLevel)
     }
 
     @IBAction func didTapPlayPause(_ sender: Any) {
@@ -136,12 +154,13 @@ class ViewController: UIViewController, TrackDelegate {
     }
     
     func trackTimeRemainingUpdated(timeRemaining: Int) {
-        countdownLabel.text = "\(timeRemaining / 60) : \((timeRemaining % 3600) % 60)"
+        countdownLabel.text = String(format: "%02d", arguments: [(timeRemaining / 60)]) + ":" + String(format: "%02d", arguments: [((timeRemaining % 3600) % 60)])
     }
 
     func trackEnded() {
         vipassanaManager.userCompletedTrack()
         playPauseButton.isHidden = true
+        isInMeditation = false
         secureButtons()
     }
 }
