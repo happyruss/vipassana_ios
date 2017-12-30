@@ -56,67 +56,67 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eQ-rh-IWm">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1P-it-Z4e">
                                                 <rect key="frame" x="0.0" y="50.5" width="270" height="30"/>
+                                                <state key="normal" title="Shamatha"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJo-Ja-jYI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eQ-rh-IWm">
+                                                <rect key="frame" x="0.0" y="80.5" width="270" height="30"/>
                                                 <state key="normal" title="Anapana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H18-7S-PIl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-c1-Nr6">
-                                                <rect key="frame" x="0.0" y="80.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="110.5" width="270" height="30"/>
                                                 <state key="normal" title="Focused Anapana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2f-EO-G7h"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Zm-vaM">
-                                                <rect key="frame" x="0.0" y="110.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="140.5" width="270" height="30"/>
                                                 <state key="normal" title="Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU6-FI-qqs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-ao-5A7">
-                                                <rect key="frame" x="0.0" y="140.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="170.5" width="270" height="30"/>
                                                 <state key="normal" title="Scanning Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15v-oI-dF7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-ed-0dI">
-                                                <rect key="frame" x="0.0" y="170.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="200.5" width="270" height="30"/>
                                                 <state key="normal" title="Symmetrical Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ba7-fc-AvV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-Fv-Ity">
-                                                <rect key="frame" x="0.0" y="200.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="230.5" width="270" height="30"/>
                                                 <state key="normal" title="Sweeping Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUo-JA-ouW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itK-4R-E6l">
-                                                <rect key="frame" x="0.0" y="230.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="260.5" width="270" height="30"/>
                                                 <state key="normal" title="In the Moment Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6p-JO-zHq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-FF-pwt">
-                                                <rect key="frame" x="0.0" y="260.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="290.5" width="270" height="30"/>
                                                 <state key="normal" title="Mettā"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkc-8a-ZeE"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1P-it-Z4e">
-                                                <rect key="frame" x="0.0" y="290.5" width="270" height="30"/>
-                                                <state key="normal" title="Shamatha"/>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJo-Ja-jYI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
