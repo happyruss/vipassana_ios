@@ -65,6 +65,7 @@ class Track {
         delegate?.trackTimeRemainingUpdated(timeRemaining: self.remainingTime)
         
         guard self.remainingTime > 0 else {
+            timer.invalidate()
             delegate?.trackEnded()
             return
         }
@@ -82,7 +83,7 @@ class Track {
         guard self.trackTemplate.isMultiPart else {
             return
         }
-        guard self.remainingTime < (self.trackTemplate.part2Duration! + 1) else {
+        guard self.remainingTime < (self.trackTemplate.part2Duration!) else {
             return
         }
         
@@ -92,7 +93,21 @@ class Track {
         }
     }
     
+    fileprivate func setupAudio() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.mixWithOthers)
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
     public func playFromBeginning() {
+        setupAudio()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         self.isPaused = false
         self.playerPart1.play()
