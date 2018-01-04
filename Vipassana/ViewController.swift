@@ -43,15 +43,15 @@ class ViewController: UIViewController, TrackDelegate {
         let enabledLevel = vipassanaManager.user.completedTrackLevel + 1
         introButton.isEnabled = true
         timerButton.isEnabled = true
-        shamathaButton.isEnabled = enabledLevel >= 1
-        anapanaButton.isEnabled = enabledLevel >= 2
-        focusedAnapanaButton.isEnabled = enabledLevel >= 3
-        topToBottomVipassanaButton.isEnabled = enabledLevel >= 4
-        scanningVipassanaButton.isEnabled = enabledLevel >= 5
-        symmetricalVipassanaButton.isEnabled = enabledLevel >= 6
-        sweepingVipassanaButton.isEnabled = enabledLevel >= 7
-        inTheMomentVipassanaButton.isEnabled = enabledLevel >= 8
-        mettaButton.isEnabled = enabledLevel >= 9
+        shamathaButton.isEnabled = enabledLevel > 1
+        anapanaButton.isEnabled = enabledLevel > 2
+        focusedAnapanaButton.isEnabled = enabledLevel > 3
+        topToBottomVipassanaButton.isEnabled = enabledLevel > 4
+        scanningVipassanaButton.isEnabled = enabledLevel > 5
+        symmetricalVipassanaButton.isEnabled = enabledLevel > 6
+        sweepingVipassanaButton.isEnabled = enabledLevel > 7
+        inTheMomentVipassanaButton.isEnabled = enabledLevel > 8
+        mettaButton.isEnabled = enabledLevel > 9
     }
     
     func runMeditation(trackLevel: Int, totalDurationSeconds: Int) {
@@ -154,7 +154,7 @@ class ViewController: UIViewController, TrackDelegate {
     }
     
     func trackTimeRemainingUpdated(timeRemaining: Int) {
-        countdownLabel.text = String(format: "%02d", arguments: [(timeRemaining / 60)]) + ":" + String(format: "%02d", arguments: [((timeRemaining % 3600) % 60)])
+        countdownLabel.text = String(format: "%d", arguments: [(timeRemaining / 60)]) + ":" + String(format: "%02d", arguments: [((timeRemaining % 3600) % 60)])
     }
 
     func trackEnded() {

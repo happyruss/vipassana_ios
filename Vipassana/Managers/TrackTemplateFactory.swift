@@ -17,6 +17,8 @@ class TrackTemplateFactory {
     
     public init() {
 
+        trackTemplates.append(TrackTemplate(name: "Timer", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "IntroBell", ofType: "m4a")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "ClosingBell", ofType: "m4a")!)))
+        
         trackTemplates.append(TrackTemplate(name: "Introduction", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "Introduction", ofType: "m4a")!), part2Url: nil))
 
         trackTemplates.append(TrackTemplate(name: "Shamatha", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "01_Shamatha", ofType: "m4a")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "01_Shamatha2", ofType: "m4a")!)))
@@ -36,8 +38,6 @@ class TrackTemplateFactory {
         trackTemplates.append(TrackTemplate(name: "In the Moment Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment", ofType: "m4a")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment2", ofType: "m4a")!)))
 
         trackTemplates.append(TrackTemplate(name: "Mettā", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "MetaPana", ofType: "m4a")!), part2Url: nil))
-
-        trackTemplates.append(TrackTemplate(name: "Timer", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "IntroBell", ofType: "m4a")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "ClosingBell", ofType: "m4a")!)))
 
         trackTemplates.forEach { (trackTemplate) in
             if(trackTemplate.minimumDuration > minimumTrackDuration) {
