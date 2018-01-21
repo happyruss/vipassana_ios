@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FONT-DINER-Coffee-Service.otf">
+            <string>CoffeeService</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Vipassana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN0-K1-rQl">
+                                <rect key="frame" x="325" y="29" width="30" height="30"/>
+                                <state key="normal" image="info2"/>
+                                <connections>
+                                    <action selector="didTapInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2Q-yu-LVn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours Spent Meditating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-wa-iBL">
+                                <rect key="frame" x="97" y="626.5" width="181.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vipassana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-Mi-uFM">
+                                <rect key="frame" x="106" y="20" width="163.5" height="47.5"/>
+                                <fontDescription key="fontDescription" name="CoffeeService" family="Coffee Service" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a session to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE2-4X-tmF">
+                                <rect key="frame" x="100.5" y="137.5" width="174.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssh-KU-NFG">
+                                <rect key="frame" x="20" y="168" width="335" height="448.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="34n-C4-9v6">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="300"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-7U-8My">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <state key="normal" title="Introduction"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuJ-ol-6wj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1P-it-Z4e">
+                                                <rect key="frame" x="0.0" y="30" width="335" height="30"/>
+                                                <state key="normal" title="Shamatha"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJo-Ja-jYI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eQ-rh-IWm">
+                                                <rect key="frame" x="0.0" y="60" width="335" height="30"/>
+                                                <state key="normal" title="Anapana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H18-7S-PIl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-c1-Nr6">
+                                                <rect key="frame" x="0.0" y="90" width="335" height="30"/>
+                                                <state key="normal" title="Focused Anapana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2f-EO-G7h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Zm-vaM">
+                                                <rect key="frame" x="0.0" y="120" width="335" height="30"/>
+                                                <state key="normal" title="Vipassana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU6-FI-qqs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-ao-5A7">
+                                                <rect key="frame" x="0.0" y="150" width="335" height="30"/>
+                                                <state key="normal" title="Scanning Vipassana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15v-oI-dF7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-ed-0dI">
+                                                <rect key="frame" x="0.0" y="180" width="335" height="30"/>
+                                                <state key="normal" title="Symmetrical Vipassana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ba7-fc-AvV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-Fv-Ity">
+                                                <rect key="frame" x="0.0" y="210" width="335" height="30"/>
+                                                <state key="normal" title="Sweeping Vipassana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUo-JA-ouW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itK-4R-E6l">
+                                                <rect key="frame" x="0.0" y="240" width="335" height="30"/>
+                                                <state key="normal" title="In the Moment Vipassana"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6p-JO-zHq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-FF-pwt">
+                                                <rect key="frame" x="0.0" y="270" width="335" height="30"/>
+                                                <state key="normal" title="Mettā"/>
+                                                <connections>
+                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkc-8a-ZeE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="trailing" secondItem="ssh-KU-NFG" secondAttribute="trailing" id="0dW-r2-Z8s"/>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="top" secondItem="ssh-KU-NFG" secondAttribute="top" id="Mfd-zQ-bWW"/>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="width" secondItem="ssh-KU-NFG" secondAttribute="width" id="R1a-GE-grU"/>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="bottom" secondItem="ssh-KU-NFG" secondAttribute="bottom" id="W5o-Yo-ECN"/>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="leading" secondItem="ssh-KU-NFG" secondAttribute="leading" id="tZt-dj-2Ks"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N04-hg-Cbz">
+                                <rect key="frame" x="20" y="28" width="31" height="30"/>
+                                <state key="normal" image="clock"/>
+                                <connections>
+                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0B-9D-hw4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="N04-hg-Cbz" firstAttribute="centerY" secondItem="W4B-Mi-uFM" secondAttribute="centerY" id="2D8-mC-GMr"/>
+                            <constraint firstItem="Oce-wa-iBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yf-ta-pGb"/>
+                            <constraint firstItem="W4B-Mi-uFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8pJ-kb-fFD"/>
+                            <constraint firstItem="Oce-wa-iBL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="F4I-IW-9SG"/>
+                            <constraint firstItem="Oce-wa-iBL" firstAttribute="top" secondItem="ssh-KU-NFG" secondAttribute="bottom" constant="10" id="I5A-zy-4PJ"/>
+                            <constraint firstItem="AE2-4X-tmF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KPD-ZK-3IT"/>
+                            <constraint firstItem="ssh-KU-NFG" firstAttribute="top" secondItem="AE2-4X-tmF" secondAttribute="bottom" constant="10" id="Kgl-wP-X3i"/>
+                            <constraint firstItem="W4B-Mi-uFM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="MgE-KE-vzj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ssh-KU-NFG" secondAttribute="trailing" constant="20" id="NSc-ph-aXV"/>
+                            <constraint firstItem="N04-hg-Cbz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OGX-lq-cdc"/>
+                            <constraint firstItem="AE2-4X-tmF" firstAttribute="top" secondItem="W4B-Mi-uFM" secondAttribute="bottom" constant="70" id="QYG-2I-0of"/>
+                            <constraint firstItem="ssh-KU-NFG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rce-Cj-NXJ"/>
+                            <constraint firstItem="sN0-K1-rQl" firstAttribute="centerY" secondItem="W4B-Mi-uFM" secondAttribute="centerY" id="hN4-6A-sXs"/>
+                            <constraint firstItem="sN0-K1-rQl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="sRs-J4-Vi1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="anapanaButton" destination="2eQ-rh-IWm" id="1nG-VI-en9"/>
+                        <outlet property="focusedAnapanaButton" destination="ZEw-c1-Nr6" id="TgS-66-bRh"/>
+                        <outlet property="inTheMomentVipassanaButton" destination="itK-4R-E6l" id="S8e-rB-I1n"/>
+                        <outlet property="introButton" destination="mVN-7U-8My" id="J1Z-Sg-yiu"/>
+                        <outlet property="mettaButton" destination="tUz-FF-pwt" id="YDX-R9-bTv"/>
+                        <outlet property="scanningVipassanaButton" destination="Eep-ao-5A7" id="P5R-IN-PiG"/>
+                        <outlet property="shamathaButton" destination="o1P-it-Z4e" id="k9t-Y2-d5E"/>
+                        <outlet property="sweepingVipassanaButton" destination="3XB-Fv-Ity" id="ilm-6C-Bl7"/>
+                        <outlet property="symmetricalVipassanaButton" destination="PHZ-ed-0dI" id="Mkr-Eo-WuP"/>
+                        <outlet property="timerButton" destination="N04-hg-Cbz" id="Mbz-QK-VtI"/>
+                        <outlet property="topToBottomVipassanaButton" destination="toc-Zm-vaM" id="zp0-r3-TBb"/>
+                        <outlet property="totalMeditationTimeLabel" destination="Oce-wa-iBL" id="IOC-x0-euK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="33.733133433283363"/>
+        </scene>
+        <!--Meditation View Controller-->
+        <scene sceneID="iEU-ni-jsg">
+            <objects>
+                <viewController storyboardIdentifier="MeditationViewController" id="mzx-qC-83o" customClass="MeditationViewController" customModule="Vipassana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRK-Xr-hFw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-sK-Duk">
+                                <rect key="frame" x="10" y="30" width="31" height="30"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="mzx-qC-83o" eventType="touchUpInside" id="Hcg-1z-4LY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddha" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-IC-l4D">
+                                <rect key="frame" x="-0.5" y="103.5" width="375" height="459"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-Wu-iSR">
+                                <rect key="frame" x="49.5" y="312" width="276" height="43.5"/>
+                                <fontDescription key="fontDescription" name="CoffeeService" family="Coffee Service" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJe-Le-qHR">
+                                <rect key="frame" x="137" y="505.5" width="100" height="100"/>
+                                <state key="normal" image="pause"/>
+                                <connections>
+                                    <action selector="didTapPlayPause:" destination="mzx-qC-83o" eventType="touchUpInside" id="Wgx-at-OqF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLJ-Cx-AjG">
+                                <rect key="frame" x="167" y="610.5" width="40.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3LO-sK-Duk" firstAttribute="leading" secondItem="RDa-Hv-9TV" secondAttribute="leading" constant="10" id="1AB-Iq-Ec2"/>
+                            <constraint firstItem="GeB-Wu-iSR" firstAttribute="centerY" secondItem="IRK-Xr-hFw" secondAttribute="centerY" id="77V-fF-hu0"/>
+                            <constraint firstItem="3LO-sK-Duk" firstAttribute="top" secondItem="RDa-Hv-9TV" secondAttribute="top" constant="10" id="TRj-fF-3p8"/>
+                            <constraint firstItem="gJe-Le-qHR" firstAttribute="centerX" secondItem="IRK-Xr-hFw" secondAttribute="centerX" id="V5b-B0-fyY"/>
+                            <constraint firstItem="NLJ-Cx-AjG" firstAttribute="top" secondItem="gJe-Le-qHR" secondAttribute="bottom" constant="5" id="Wcm-Ct-Rue"/>
+                            <constraint firstItem="NLJ-Cx-AjG" firstAttribute="centerX" secondItem="IRK-Xr-hFw" secondAttribute="centerX" id="XCg-Ai-sUw"/>
+                            <constraint firstItem="gJe-Le-qHR" firstAttribute="top" secondItem="GeB-Wu-iSR" secondAttribute="bottom" constant="150" id="aKG-np-Atz"/>
+                            <constraint firstItem="NKS-IC-l4D" firstAttribute="centerY" secondItem="IRK-Xr-hFw" secondAttribute="centerY" id="e3O-N8-lZm"/>
+                            <constraint firstItem="NKS-IC-l4D" firstAttribute="centerX" secondItem="IRK-Xr-hFw" secondAttribute="centerX" id="q42-i9-4cq"/>
+                            <constraint firstItem="GeB-Wu-iSR" firstAttribute="centerX" secondItem="IRK-Xr-hFw" secondAttribute="centerX" id="vBr-PF-zim"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RDa-Hv-9TV"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="3LO-sK-Duk" id="6sN-cu-9zL"/>
+                        <outlet property="countdownLabel" destination="NLJ-Cx-AjG" id="epd-fP-A4g"/>
+                        <outlet property="meditationNameLabel" destination="GeB-Wu-iSR" id="Cit-GD-x4L"/>
+                        <outlet property="playPauseButton" destination="gJe-Le-qHR" id="sVd-29-VXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bR-iD-bUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312.8" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="31" height="30"/>
+        <image name="buddha" width="375" height="459"/>
+        <image name="clock" width="31" height="30"/>
+        <image name="info2" width="30" height="30"/>
+        <image name="pause" width="100" height="100"/>
+    </resources>
+</document>
