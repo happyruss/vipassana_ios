@@ -30,6 +30,7 @@
 		464A06421FF6EFDB008D8AB4 /* 06_Symmetrical2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A062E1FF6EFDB008D8AB4 /* 06_Symmetrical2.m4a */; };
 		464A06431FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A062F1FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a */; };
 		464A06451FF6F063008D8AB4 /* 04_TopToBottom.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A06441FF6F063008D8AB4 /* 04_TopToBottom.m4a */; };
+		4663D591201503ED00CE7E83 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4663D590201503ED00CE7E83 /* MeditationViewController.swift */; };
 		46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */; };
 		46E6CB4B1FE6EA3200F09C38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */; };
 		46E6CB4E1FE6EA3200F09C38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E6CB4C1FE6EA3200F09C38 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		464A062E1FF6EFDB008D8AB4 /* 06_Symmetrical2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 06_Symmetrical2.m4a; sourceTree = "<group>"; };
 		464A062F1FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08_InTheMoment2.m4a; sourceTree = "<group>"; };
 		464A06441FF6F063008D8AB4 /* 04_TopToBottom.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04_TopToBottom.m4a; sourceTree = "<group>"; };
+		4663D590201503ED00CE7E83 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		46E6CB451FE6EA3200F09C38 /* Vipassana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vipassana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				4630ECF31FE70C7B0066D5E5 /* Models */,
 				46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */,
 				46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */,
+				4663D590201503ED00CE7E83 /* MeditationViewController.swift */,
 				46E6CB4C1FE6EA3200F09C38 /* Main.storyboard */,
 				46E6CB4F1FE6EA3200F09C38 /* Assets.xcassets */,
 				46E6CB511FE6EA3200F09C38 /* LaunchScreen.storyboard */,
@@ -389,6 +392,7 @@
 				46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */,
 				46FD68DD1FE8546300427F9C /* TrackTemplateFactory.swift in Sources */,
 				4630ECF51FE70CA50066D5E5 /* Track.swift in Sources */,
+				4663D591201503ED00CE7E83 /* MeditationViewController.swift in Sources */,
 				46FD68DB1FE8545800427F9C /* TrackTemplate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

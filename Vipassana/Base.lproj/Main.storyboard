@@ -19,19 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qQF-Us-Scz">
-                                <rect key="frame" x="52.5" y="173.5" width="270" height="320.5"/>
+                                <rect key="frame" x="99" y="184" width="177" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1BU-bJ-ZCm">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="320.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="300"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-UY-K9r">
-                                                <rect key="frame" x="0.0" y="0.0" width="270" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRe-1F-fRg">
-                                                <rect key="frame" x="0.0" y="20.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-7U-8My">
                                                         <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
@@ -40,15 +34,8 @@
                                                             <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuJ-ol-6wj"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLm-IA-uCj">
-                                                        <rect key="frame" x="84" y="0.0" width="93" height="30"/>
-                                                        <state key="normal" title="Play or Pause"/>
-                                                        <connections>
-                                                            <action selector="didTapPlayPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xxl-p4-rbc"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N04-hg-Cbz">
-                                                        <rect key="frame" x="177" y="0.0" width="93" height="30"/>
+                                                        <rect key="frame" x="84" y="0.0" width="93" height="30"/>
                                                         <state key="normal" title="Silence Timer"/>
                                                         <connections>
                                                             <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0B-9D-hw4"/>
@@ -57,63 +44,63 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1P-it-Z4e">
-                                                <rect key="frame" x="0.0" y="50.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="30" width="177" height="30"/>
                                                 <state key="normal" title="Shamatha"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJo-Ja-jYI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eQ-rh-IWm">
-                                                <rect key="frame" x="0.0" y="80.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="60" width="177" height="30"/>
                                                 <state key="normal" title="Anapana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H18-7S-PIl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-c1-Nr6">
-                                                <rect key="frame" x="0.0" y="110.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="177" height="30"/>
                                                 <state key="normal" title="Focused Anapana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2f-EO-G7h"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Zm-vaM">
-                                                <rect key="frame" x="0.0" y="140.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="120" width="177" height="30"/>
                                                 <state key="normal" title="Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU6-FI-qqs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-ao-5A7">
-                                                <rect key="frame" x="0.0" y="170.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="150" width="177" height="30"/>
                                                 <state key="normal" title="Scanning Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15v-oI-dF7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-ed-0dI">
-                                                <rect key="frame" x="0.0" y="200.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="180" width="177" height="30"/>
                                                 <state key="normal" title="Symmetrical Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ba7-fc-AvV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-Fv-Ity">
-                                                <rect key="frame" x="0.0" y="230.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="210" width="177" height="30"/>
                                                 <state key="normal" title="Sweeping Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUo-JA-ouW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itK-4R-E6l">
-                                                <rect key="frame" x="0.0" y="260.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="240" width="177" height="30"/>
                                                 <state key="normal" title="In the Moment Vipassana"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6p-JO-zHq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-FF-pwt">
-                                                <rect key="frame" x="0.0" y="290.5" width="270" height="30"/>
+                                                <rect key="frame" x="0.0" y="270" width="177" height="30"/>
                                                 <state key="normal" title="Mettā"/>
                                                 <connections>
                                                     <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkc-8a-ZeE"/>
@@ -123,6 +110,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN0-K1-rQl">
+                                <rect key="frame" x="79" y="74" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Info"/>
+                                <connections>
+                                    <action selector="didTapInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2Q-yu-LVn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours Spent Meditating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-wa-iBL">
+                                <rect key="frame" x="16" y="608" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -133,22 +135,75 @@
                     </view>
                     <connections>
                         <outlet property="anapanaButton" destination="2eQ-rh-IWm" id="1nG-VI-en9"/>
-                        <outlet property="countdownLabel" destination="Jqg-UY-K9r" id="ssT-wA-Lmi"/>
                         <outlet property="focusedAnapanaButton" destination="ZEw-c1-Nr6" id="TgS-66-bRh"/>
                         <outlet property="inTheMomentVipassanaButton" destination="itK-4R-E6l" id="S8e-rB-I1n"/>
                         <outlet property="introButton" destination="mVN-7U-8My" id="J1Z-Sg-yiu"/>
                         <outlet property="mettaButton" destination="tUz-FF-pwt" id="YDX-R9-bTv"/>
-                        <outlet property="playPauseButton" destination="wLm-IA-uCj" id="YFB-Jc-Z0f"/>
                         <outlet property="scanningVipassanaButton" destination="Eep-ao-5A7" id="P5R-IN-PiG"/>
                         <outlet property="shamathaButton" destination="o1P-it-Z4e" id="k9t-Y2-d5E"/>
                         <outlet property="sweepingVipassanaButton" destination="3XB-Fv-Ity" id="ilm-6C-Bl7"/>
                         <outlet property="symmetricalVipassanaButton" destination="PHZ-ed-0dI" id="Mkr-Eo-WuP"/>
                         <outlet property="timerButton" destination="N04-hg-Cbz" id="Mbz-QK-VtI"/>
                         <outlet property="topToBottomVipassanaButton" destination="toc-Zm-vaM" id="zp0-r3-TBb"/>
+                        <outlet property="totalMeditationTimeLabel" destination="Oce-wa-iBL" id="IOC-x0-euK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="33.733133433283363"/>
+        </scene>
+        <!--Meditation View Controller-->
+        <scene sceneID="iEU-ni-jsg">
+            <objects>
+                <viewController storyboardIdentifier="MeditationViewController" id="mzx-qC-83o" customClass="MeditationViewController" customModule="Vipassana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRK-Xr-hFw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJe-Le-qHR">
+                                <rect key="frame" x="141" y="181" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play or Pause"/>
+                                <connections>
+                                    <action selector="didTapPlayPause:" destination="mzx-qC-83o" eventType="touchUpInside" id="Wgx-at-OqF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-sK-Duk">
+                                <rect key="frame" x="157" y="64" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="mzx-qC-83o" eventType="touchUpInside" id="Hcg-1z-4LY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLJ-Cx-AjG">
+                                <rect key="frame" x="103" y="361" width="177" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meditation Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-Wu-iSR">
+                                <rect key="frame" x="122" y="140" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RDa-Hv-9TV"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="3LO-sK-Duk" id="6sN-cu-9zL"/>
+                        <outlet property="countdownLabel" destination="NLJ-Cx-AjG" id="epd-fP-A4g"/>
+                        <outlet property="meditationNameLabel" destination="GeB-Wu-iSR" id="Cit-GD-x4L"/>
+                        <outlet property="playPauseButton" destination="gJe-Le-qHR" id="sVd-29-VXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bR-iD-bUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="34"/>
         </scene>
     </scenes>
 </document>

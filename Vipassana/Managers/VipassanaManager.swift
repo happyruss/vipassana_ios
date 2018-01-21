@@ -22,6 +22,7 @@ class VipassanaManager {
     public init() {
         self.user = User()
         self.user.completedTrackLevel = defaults.integer(forKey: "SavedCompletedLevel")
+        self.user.totalSecondsInMeditation = defaults.integer(forKey: "TotalSecondsInMeditation")
         var savedCustomMeditationDurationMinutes = defaults.integer(forKey: "SavedCustomMeditationDurationMinutes")
         let minimumTrackDurationMinutes = trackTemplateFactory.minimumTrackDuration / 60
         if (savedCustomMeditationDurationMinutes < minimumTrackDurationMinutes + 1) {
@@ -68,6 +69,11 @@ class VipassanaManager {
     public func setDefaultDurationMinutes(durationMinutes: Int) {
         defaults.setValue(durationMinutes, forKey: "SavedCustomMeditationDurationMinutes")
         self.user.customMeditationDurationMinutes = durationMinutes
+    }
+    
+    public func incrementTotalSecondsInMeditation() {
+        self.user.totalSecondsInMeditation = self.user.totalSecondsInMeditation + 1
+        defaults.setValue(self.user.totalSecondsInMeditation, forKey: "TotalSecondsInMeditation")
     }
     
 }
