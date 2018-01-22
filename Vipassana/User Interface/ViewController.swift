@@ -24,14 +24,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var inTheMomentVipassanaButton: UIButton!
     @IBOutlet weak var mettaButton: UIButton!
     @IBOutlet weak var totalMeditationTimeLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    @IBOutlet weak var introDoneImageView: UIImageView!
+    @IBOutlet weak var dots2ImageView: UIImageView!
+    @IBOutlet weak var dots3ImageView: UIImageView!
+    @IBOutlet weak var dots4ImageView: UIImageView!
+    @IBOutlet weak var dots5ImageView: UIImageView!
+    @IBOutlet weak var dots6ImageView: UIImageView!
+    @IBOutlet weak var dots7ImageView: UIImageView!
+    @IBOutlet weak var dots8ImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundImageView.clipsToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        totalMeditationTimeLabel.text = "\(vipassanaManager.user.totalSecondsInMeditation / 3600) hours spent meditating"
+        let medHours = vipassanaManager.user.totalSecondsInMeditation / 3600
+        totalMeditationTimeLabel.text = medHours == 1 ? "\(medHours) hour spent meditating" : "\(medHours) hours spent meditating"
         self.secureButtons()
     }
 
@@ -45,13 +57,21 @@ class ViewController: UIViewController {
         introButton.isEnabled = true
         timerButton.isEnabled = true
         shamathaButton.isEnabled = enabledLevel > 1
+        introDoneImageView.image = enabledLevel > 1 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         anapanaButton.isEnabled = enabledLevel > 2
+        dots2ImageView.image = enabledLevel > 2 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         focusedAnapanaButton.isEnabled = enabledLevel > 3
+        dots3ImageView.image = enabledLevel > 3 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         topToBottomVipassanaButton.isEnabled = enabledLevel > 4
+        dots4ImageView.image = enabledLevel > 4 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         scanningVipassanaButton.isEnabled = enabledLevel > 5
+        dots5ImageView.image = enabledLevel > 5 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         symmetricalVipassanaButton.isEnabled = enabledLevel > 6
+        dots6ImageView.image = enabledLevel > 6 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         sweepingVipassanaButton.isEnabled = enabledLevel > 7
+        dots7ImageView.image = enabledLevel > 7 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         inTheMomentVipassanaButton.isEnabled = enabledLevel > 8
+        dots8ImageView.image = enabledLevel > 8 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         mettaButton.isEnabled = enabledLevel > 9
     }
     

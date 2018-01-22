@@ -13,22 +13,28 @@ class VipassanaButton: UIButton {
     let minimalTitleSpinnerSpacing: CGFloat = 10
     let contentInsets = UIEdgeInsets(top: 12, left: 15, bottom: 12, right: 15)
     
-    var titleFont: UIFont = UIFont(name:UIFont.fontNames(forFamilyName: "Coffee Service")[0], size: 15)! {
+    var titleFont: UIFont = UIFont(name:UIFont.fontNames(forFamilyName: "Coffee Service")[0], size: 24)! {
+        didSet {
+//            updateTitleLabel()
+        }
+    }
+    
+    override var isEnabled: Bool {
         didSet {
             updateTitleLabel()
         }
     }
     
     @IBInspectable
-    var titleColor: UIColor = UIColor.black {
+    var titleColor: UIColor {
         didSet {
-            updateTitleLabel()
+//            updateTitleLabel()
         }
     }
     
     var underlineStyle: NSUnderlineStyle = NSUnderlineStyle.styleNone {
         didSet {
-            updateTitleLabel()
+//            updateTitleLabel()
         }
     }
     
@@ -57,6 +63,7 @@ class VipassanaButton: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) {
+        titleColor = UIColor.white
         super.init(coder: aDecoder)
     }
     
@@ -96,17 +103,32 @@ class VipassanaButton: UIButton {
     private func updateTitleLabel() {
         let currentTitle:String = self.title(for: .normal) ?? ""
         contentHorizontalAlignment = .center
+        contentVerticalAlignment = .center
         contentEdgeInsets = contentInsets
         titleLabel?.font = titleFont
         titleLabel?.baselineAdjustment = .none
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
+        
+        let foregroundColor: UIColor
+        if (isEnabled) {
+            backgroundColor = backgroundColor?.withAlphaComponent(1)
+            foregroundColor = UIColor.white.withAlphaComponent(1)
+            self.isOpaque = true
+        } else {
+            backgroundColor = backgroundColor?.withAlphaComponent(0.5)
+            foregroundColor = UIColor.white.withAlphaComponent(0.5)
+            self.isOpaque = false
+        }
+
         let title = NSAttributedString(string: currentTitle, attributes: [
             NSAttributedStringKey.kern: kernValue,
-            NSAttributedStringKey.foregroundColor: titleLabelHidden ? UIColor.clear : titleColor,
+            NSAttributedStringKey.foregroundColor: foregroundColor,
             NSAttributedStringKey.paragraphStyle: paragraphStyle,
             NSAttributedStringKey.underlineStyle: underlineStyle.rawValue
             ])
+        
+        
         UIView.setAnimationsEnabled(false)
         setAttributedTitle(title, for: .normal)
         layoutIfNeeded()
