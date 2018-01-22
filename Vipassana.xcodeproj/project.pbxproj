@@ -31,6 +31,7 @@
 		464A06431FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A062F1FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a */; };
 		464A06451FF6F063008D8AB4 /* 04_TopToBottom.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A06441FF6F063008D8AB4 /* 04_TopToBottom.m4a */; };
 		4663D591201503ED00CE7E83 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4663D590201503ED00CE7E83 /* MeditationViewController.swift */; };
+		46C1BCE920164ACD00824ECE /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46C1BCE820164ACC00824ECE /* SF-Pro-Text-Semibold.otf */; };
 		46DA82672015165E00BA875D /* FONT-DINER-Coffee-Service.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46DA82662015165D00BA875D /* FONT-DINER-Coffee-Service.otf */; };
 		46DA826B20151ED700BA875D /* VipassanaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA826A20151ED700BA875D /* VipassanaButton.swift */; };
 		46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */; };
@@ -86,6 +87,7 @@
 		464A062F1FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08_InTheMoment2.m4a; sourceTree = "<group>"; };
 		464A06441FF6F063008D8AB4 /* 04_TopToBottom.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04_TopToBottom.m4a; sourceTree = "<group>"; };
 		4663D590201503ED00CE7E83 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
+		46C1BCE820164ACC00824ECE /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		46DA82662015165D00BA875D /* FONT-DINER-Coffee-Service.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FONT-DINER-Coffee-Service.otf"; sourceTree = "<group>"; };
 		46DA826A20151ED700BA875D /* VipassanaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipassanaButton.swift; sourceTree = "<group>"; };
 		46E6CB451FE6EA3200F09C38 /* Vipassana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vipassana.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +215,7 @@
 			children = (
 				46DA826920151EB200BA875D /* User Interface */,
 				46DA82662015165D00BA875D /* FONT-DINER-Coffee-Service.otf */,
+				46C1BCE820164ACC00824ECE /* SF-Pro-Text-Semibold.otf */,
 				4630ECFC1FE71C660066D5E5 /* AudioAssets */,
 				4630ECF81FE713CB0066D5E5 /* Managers */,
 				4630ECF31FE70C7B0066D5E5 /* Models */,
@@ -360,6 +363,7 @@
 				46E6CB531FE6EA3200F09C38 /* LaunchScreen.storyboard in Resources */,
 				464A06341FF6EFDB008D8AB4 /* 04_TopToBottom2.m4a in Resources */,
 				464A06401FF6EFDB008D8AB4 /* 01_Shamatha2.m4a in Resources */,
+				46C1BCE920164ACD00824ECE /* SF-Pro-Text-Semibold.otf in Resources */,
 				46E6CB501FE6EA3200F09C38 /* Assets.xcassets in Resources */,
 				46E6CB4E1FE6EA3200F09C38 /* Main.storyboard in Resources */,
 				464A063A1FF6EFDB008D8AB4 /* 05_TopToBottomBottomToTop.m4a in Resources */,

@@ -35,12 +35,21 @@ class MeditationViewController: UIViewController, TrackDelegate {
         meditationNameLabel.text = trackTemplate.name
         vipassanaManager.playTrackAtLevel(trackLevel: trackLevel, gapDuration: gapDuration)
         vipassanaManager.activeTrack?.delegate = self
+        playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControlState.normal)
         playPauseButton.isHidden = false
         isInMeditation = true
     }
     
     @IBAction func didTapPlayPause(_ sender: Any) {
         vipassanaManager.pauseOrResume()
+        guard let activeTrack = vipassanaManager.activeTrack else {
+            return
+        }
+        if activeTrack.isPaused {
+            playPauseButton.setImage(#imageLiteral(resourceName: "play-button"), for: UIControlState.normal)
+        } else {
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControlState.normal)
+        }
     }
     
     func goBackToMainScreen() {

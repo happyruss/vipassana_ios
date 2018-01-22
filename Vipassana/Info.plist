@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FONT-DINER-Coffee-Service.otf</string>
+		<string>SF-Pro-Text-Semibold.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

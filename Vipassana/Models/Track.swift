@@ -17,7 +17,7 @@ protocol TrackDelegate: class {
 class Track {
     
     fileprivate var remainingTime = 0
-    fileprivate var isPaused = false
+    public var isPaused = false
     fileprivate var timer = Timer()
     
     fileprivate let trackTemplate: TrackTemplate
