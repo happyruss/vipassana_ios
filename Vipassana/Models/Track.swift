@@ -83,7 +83,7 @@ class Track {
         guard self.trackTemplate.isMultiPart else {
             return
         }
-        guard self.remainingTime < (self.trackTemplate.part2Duration!) else {
+        guard self.remainingTime < (self.trackTemplate.part2Duration! - 5) else {
             return
         }
         

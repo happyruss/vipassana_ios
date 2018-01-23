@@ -34,10 +34,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var dots6ImageView: UIImageView!
     @IBOutlet weak var dots7ImageView: UIImageView!
     @IBOutlet weak var dots8ImageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImageView.clipsToBounds = true
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,6 +78,48 @@ class ViewController: UIViewController {
         inTheMomentVipassanaButton.isEnabled = enabledLevel > 8
         dots8ImageView.image = enabledLevel > 8 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
         mettaButton.isEnabled = enabledLevel > 9
+        
+        var contentOffset:CGPoint
+        switch enabledLevel {
+        case 0:
+            contentOffset = introButton.frame.origin
+            break;
+        case 1:
+            contentOffset = introDoneImageView.frame.origin
+            break;
+        case 2:
+            contentOffset = dots2ImageView.frame.origin
+            break;
+        case 3:
+            contentOffset = dots3ImageView.frame.origin
+            break;
+        case 4:
+            contentOffset = dots4ImageView.frame.origin
+            break;
+        case 5:
+            contentOffset = dots5ImageView.frame.origin
+            break;
+        case 6:
+            contentOffset = dots6ImageView.frame.origin
+            break;
+        case 7:
+            contentOffset = dots7ImageView.frame.origin
+            break;
+        case 8:
+            contentOffset = dots8ImageView.frame.origin
+            break;
+        case 9, 10:
+            contentOffset = mettaButton.frame.origin
+            break;
+        default:
+            contentOffset = introButton.frame.origin
+            break;
+        }
+        let bottomOffset = CGPoint(x:0, y:self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
+        if (contentOffset.y > bottomOffset.y) {
+            contentOffset = bottomOffset
+        }
+        scrollView.setContentOffset(contentOffset, animated: true)
     }
     
     func runMeditation(trackLevel: Int, totalDurationSeconds: Int) {

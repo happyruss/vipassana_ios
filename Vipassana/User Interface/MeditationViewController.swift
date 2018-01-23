@@ -16,8 +16,14 @@ class MeditationViewController: UIViewController, TrackDelegate {
     @IBOutlet weak var meditationNameLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-
+    @IBOutlet weak var blackBackgroundButton: UIButton!
+    @IBOutlet weak var backgroundButton: UIButton!
+    
     private var isInMeditation = false
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +65,14 @@ class MeditationViewController: UIViewController, TrackDelegate {
         }
     }
     
+    @IBAction func didTapBlackBackgroundButton(_ sender: Any) {
+        blackBackgroundButton.isHidden = true
+    }
+    
+    @IBAction func didTapBackground(_ sender: Any) {
+        blackBackgroundButton.isHidden = false
+    }
+
     @IBAction func didTapBackButton(_ sender: UIButton) {
         if (isInMeditation) {
             let alert = UIAlertController(title: "Meditation Underway", message: "Would you like to stop the current session?", preferredStyle: UIAlertControllerStyle.alert)
@@ -83,6 +97,7 @@ class MeditationViewController: UIViewController, TrackDelegate {
     func trackEnded() {
         vipassanaManager.userCompletedTrack()
         playPauseButton.isHidden = true
+        blackBackgroundButton.isHidden = true
         isInMeditation = false
     }
 }
