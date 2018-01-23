@@ -81,35 +81,32 @@ class ViewController: UIViewController {
         
         var contentOffset:CGPoint
         switch enabledLevel {
-        case 0:
+        case 0,1,2:
             contentOffset = introButton.frame.origin
             break;
-        case 1:
+        case 3:
             contentOffset = introDoneImageView.frame.origin
             break;
-        case 2:
+        case 4:
             contentOffset = dots2ImageView.frame.origin
             break;
-        case 3:
+        case 5:
             contentOffset = dots3ImageView.frame.origin
             break;
-        case 4:
+        case 6:
             contentOffset = dots4ImageView.frame.origin
             break;
-        case 5:
+        case 7:
             contentOffset = dots5ImageView.frame.origin
             break;
-        case 6:
+        case 8:
             contentOffset = dots6ImageView.frame.origin
             break;
-        case 7:
+        case 9:
             contentOffset = dots7ImageView.frame.origin
             break;
-        case 8:
+        case 10:
             contentOffset = dots8ImageView.frame.origin
-            break;
-        case 9, 10:
-            contentOffset = mettaButton.frame.origin
             break;
         default:
             contentOffset = introButton.frame.origin
