@@ -17,7 +17,7 @@ protocol TrackDelegate: class {
 class Track {
     
     fileprivate var remainingTime = 0
-    fileprivate var isPaused = false
+    public var isPaused = false
     fileprivate var timer = Timer()
     
     fileprivate let trackTemplate: TrackTemplate
@@ -83,7 +83,7 @@ class Track {
         guard self.trackTemplate.isMultiPart else {
             return
         }
-        guard self.remainingTime < (self.trackTemplate.part2Duration!) else {
+        guard self.remainingTime < (self.trackTemplate.part2Duration! - 5) else {
             return
         }
         

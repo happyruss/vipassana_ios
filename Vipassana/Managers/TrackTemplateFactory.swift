@@ -37,7 +37,7 @@ class TrackTemplateFactory {
 
         trackTemplates.append(TrackTemplate(name: "In the Moment Vipassana", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment", ofType: "m4a")!), part2Url: URL(fileURLWithPath: Bundle.main.path(forResource: "08_InTheMoment2", ofType: "m4a")!)))
 
-        trackTemplates.append(TrackTemplate(name: "Mettā", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "MetaPana", ofType: "m4a")!), part2Url: nil))
+        trackTemplates.append(TrackTemplate(name: "Metta", part1Url: URL(fileURLWithPath: Bundle.main.path(forResource: "MetaPana", ofType: "m4a")!), part2Url: nil))
 
         trackTemplates.forEach { (trackTemplate) in
             if(trackTemplate.minimumDuration > minimumTrackDuration) {

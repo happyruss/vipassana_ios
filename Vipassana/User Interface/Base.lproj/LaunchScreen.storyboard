@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="shb-ee-KUd">
+                                <rect key="frame" x="-220" y="0.0" width="595" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buddha" translatesAutoresizingMaskIntoConstraints="NO" id="urI-lV-LTv">
+                                <rect key="frame" x="-0.5" y="103.5" width="375" height="459"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vipassana" translatesAutoresizingMaskIntoConstraints="NO" id="tyV-NH-X1K">
+                                <rect key="frame" x="22" y="282" width="330" height="102"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gmt logo white" translatesAutoresizingMaskIntoConstraints="NO" id="O8B-LC-0ay">
+                                <rect key="frame" x="140" y="394" width="94" height="89"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Russell Eric Dobda 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slp-Xf-WVW">
+                                <rect key="frame" x="115.5" y="633" width="144.5" height="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <color key="textColor" red="0.72549019609999998" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O8B-LC-0ay" firstAttribute="top" secondItem="tyV-NH-X1K" secondAttribute="bottom" constant="10" id="9Hd-VX-U60"/>
+                            <constraint firstItem="shb-ee-KUd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JJ1-no-0Tc"/>
+                            <constraint firstItem="urI-lV-LTv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="LwK-bo-Vvd"/>
+                            <constraint firstItem="shb-ee-KUd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-220" id="O7D-mH-SNh"/>
+                            <constraint firstItem="Slp-Xf-WVW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="R5a-ZK-6b2"/>
+                            <constraint firstItem="shb-ee-KUd" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="XxG-uF-Ukx"/>
+                            <constraint firstItem="urI-lV-LTv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lv1-WJ-wOR"/>
+                            <constraint firstItem="O8B-LC-0ay" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m5B-jM-mc4"/>
+                            <constraint firstItem="Slp-Xf-WVW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="oPS-5g-ybv"/>
+                            <constraint firstItem="shb-ee-KUd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qn2-R6-lTn"/>
+                            <constraint firstItem="tyV-NH-X1K" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="taZ-Wz-h1A"/>
+                            <constraint firstItem="tyV-NH-X1K" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wWS-VY-il4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Vipassana" width="330" height="102"/>
+        <image name="background" width="5472" height="2971"/>
+        <image name="buddha" width="375" height="459"/>
+        <image name="gmt logo white" width="94" height="89"/>
+    </resources>
+</document>
