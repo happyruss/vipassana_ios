@@ -23,6 +23,44 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImageView.clipsToBounds = true
+
+        self.titleLabel.text = trackTemplateFactory.appName
+        let trackCount = trackTemplateFactory.trackTemplates.count
+        
+        for i in 1...trackCount - 1 {
+            let trackTemplate = trackTemplateFactory.trackTemplates[i]
+            let button = VipassanaButton()
+            button.tag = i
+            button.setTitle(trackTemplate.shortName, for: .normal)
+            button.addTarget(self, action: #selector(self.didTapMeditationButton(_:)), for: .touchUpInside)
+            stackView.addArrangedSubview(button)
+            if (i < trackCount - 1) {
+                let dots = UIImageView()
+                dots.contentMode = .scaleAspectFit
+                dots.tag = i + 100
+                dots.image = #imageLiteral(resourceName: "dots")
+                dots.sizeToFit()
+                stackView.addArrangedSubview(dots)
+            }
+            button.sizeToFit()
+            
+            if i == 1 {
+                let firstDots = view.viewWithTag(101) as UIView?
+                
+                let heightOfAButton = button.frame.size.height
+                let heightOfDots = firstDots?.frame.size.height ?? 0
+                
+                let heightOfAnItem = heightOfAButton + heightOfDots + 20
+                let stackViewHeight = heightOfAnItem * CGFloat(trackTemplateFactory.trackTemplates.count)
+                
+                for constraint in stackView.constraints {
+                    if constraint.identifier == "stackViewHeightConstraint" {
+                        constraint.constant = stackViewHeight
+                    }
+                }
+                
+            }
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -30,23 +68,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.titleLabel.text = trackTemplateFactory.appName
-
-        for i in 1...trackTemplateFactory.trackTemplates.count - 1 {
-            let trackTemplate = trackTemplateFactory.trackTemplates[i]
-            let button = VipassanaButton()
-            button.tag = i
-            button.setTitle(trackTemplate.shortName, for: .normal)
-            button.addTarget(self, action: #selector(self.didTapMeditationButton(_:)), for: .touchUpInside)
-            stackView.addArrangedSubview(button)
-            if (i < trackTemplateFactory.trackTemplates.count - 1) {
-                let dots = UIImageView()
-                dots.contentMode = .scaleAspectFit
-                dots.tag = i + 100
-                dots.image = #imageLiteral(resourceName: "dots")
-                stackView.addArrangedSubview(dots)
-            }
-        }
+        self.view.layoutIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +98,7 @@ class ViewController: UIViewController {
             button.isEnabled = alwaysEnable || enabledLevel > i - 1
             if isNotLastTrack {
                 let dots = view.viewWithTag(i + 100) as! UIImageView
-                dots.image = enabledLevel > i - 1 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
+                dots.image = alwaysEnable || enabledLevel > i - 1 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
                 if enabledLevel == i + 1 {
                     contentOffset = dots.frame.origin
                 }

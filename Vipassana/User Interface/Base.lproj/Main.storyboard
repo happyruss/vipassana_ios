@@ -42,8 +42,8 @@
                                 <color key="textColor" red="0.72549019609999998" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vipassana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-Mi-uFM">
-                                <rect key="frame" x="106" y="40" width="163.5" height="47.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-Mi-uFM">
+                                <rect key="frame" x="110" y="40" width="155.5" height="47.5"/>
                                 <fontDescription key="fontDescription" name="CoffeeService" family="Coffee Service" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -54,18 +54,21 @@
                                 <color key="textColor" red="0.72549019609999998" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ssh-KU-NFG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssh-KU-NFG">
                                 <rect key="frame" x="20" y="188" width="335" height="428.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="34n-C4-9v6">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="570"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="34n-C4-9v6">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" identifier="stackViewHeightConstraint" id="y8w-Pc-U5t"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="trailing" secondItem="ssh-KU-NFG" secondAttribute="trailing" id="0dW-r2-Z8s"/>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="top" secondItem="ssh-KU-NFG" secondAttribute="top" id="Mfd-zQ-bWW"/>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="width" secondItem="ssh-KU-NFG" secondAttribute="width" id="R1a-GE-grU"/>
-                                    <constraint firstItem="34n-C4-9v6" firstAttribute="bottom" secondItem="ssh-KU-NFG" secondAttribute="bottom" id="W5o-Yo-ECN"/>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="bottom" secondItem="ssh-KU-NFG" secondAttribute="bottom" identifier="stackViewBottomConstraint" id="W5o-Yo-ECN"/>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="leading" secondItem="ssh-KU-NFG" secondAttribute="leading" id="tZt-dj-2Ks"/>
                                 </constraints>
                             </scrollView>
@@ -124,8 +127,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="y37-OE-5YA">
                                 <rect key="frame" x="-220" y="20" width="595" height="647"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vipassana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMT-PZ-JK0">
-                                <rect key="frame" x="61" y="47" width="58" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMT-PZ-JK0">
+                                <rect key="frame" x="61" y="47" width="55.5" height="17"/>
                                 <fontDescription key="fontDescription" name="CoffeeService" family="Coffee Service" pointSize="17"/>
                                 <color key="textColor" red="0.72549019609999998" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

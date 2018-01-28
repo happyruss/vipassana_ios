@@ -15,7 +15,6 @@ class VipassanaButton: UIButton {
     
     var titleFont: UIFont = UIFont(name:UIFont.fontNames(forFamilyName: "Coffee Service")[0], size: 24)! {
         didSet {
-//            updateTitleLabel()
         }
     }
     
@@ -28,13 +27,11 @@ class VipassanaButton: UIButton {
     @IBInspectable
     var titleColor: UIColor {
         didSet {
-//            updateTitleLabel()
         }
     }
     
     var underlineStyle: NSUnderlineStyle = NSUnderlineStyle.styleNone {
         didSet {
-//            updateTitleLabel()
         }
     }
     
@@ -141,17 +138,6 @@ class VipassanaButton: UIButton {
         setAttributedTitle(title, for: .normal)
         layoutIfNeeded()
         UIView.setAnimationsEnabled(true)
-    }
-    
-    private func updateImageViewPosition() {
-        guard let imageView = imageView else {
-            return
-        }
-        imageView.sizeToFit()
-        var rect = imageView.frame
-        rect.origin.x = 15.0
-        rect.origin.y = (bounds.size.height / 2) - (rect.size.height / 2)
-        imageView.frame = rect
     }
     
 }
