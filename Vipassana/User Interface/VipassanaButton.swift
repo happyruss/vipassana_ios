@@ -62,6 +62,12 @@ class VipassanaButton: UIButton {
         }
     }
     
+    init() {
+        titleColor = UIColor.white
+        super.init(frame: .zero)
+        backgroundColor = UIColor(red: 142.0/255.0, green: 125.0/255.0, blue: 97.0/255.0, alpha: 1)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         titleColor = UIColor.white
         super.init(coder: aDecoder)
@@ -128,6 +134,8 @@ class VipassanaButton: UIButton {
             NSAttributedStringKey.underlineStyle: underlineStyle.rawValue
             ])
         
+        self.updateCornerRadius()
+        self.updateShadow()
         
         UIView.setAnimationsEnabled(false)
         setAttributedTitle(title, for: .normal)
