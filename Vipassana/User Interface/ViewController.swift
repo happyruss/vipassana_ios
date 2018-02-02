@@ -183,7 +183,7 @@ class ViewController: UIViewController {
             }))
             
             if (self.vipassanaManager.user.customMeditationDurationMinutes > minDurationMinutes) {
-                alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.default, handler: { action in
+                alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.destructive, handler: { action in
                     self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: self.vipassanaManager.user.customMeditationDurationMinutes * 60)
                 }))
             }
