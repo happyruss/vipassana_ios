@@ -11,7 +11,11 @@ import UIKit
 class MeditationViewController: UIViewController, TrackDelegate {
     
     let vipassanaManager = VipassanaManager.shared
+    let trackTemplateFactory = TrackTemplateFactory.shared
     
+    
+    
+    @IBOutlet weak var appNameLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var meditationNameLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
@@ -28,6 +32,7 @@ class MeditationViewController: UIViewController, TrackDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         playPauseButton.isHidden = true
+        self.appNameLabel.text = trackTemplateFactory.appName
     }
     
     override func didReceiveMemoryWarning() {

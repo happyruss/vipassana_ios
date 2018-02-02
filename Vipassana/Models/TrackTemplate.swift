@@ -11,6 +11,7 @@ import AVKit
 
 class TrackTemplate {
     
+    let shortName: String;
     let name: String;
     fileprivate let part1Url: URL
     let part1Duration: Int
@@ -24,7 +25,8 @@ class TrackTemplate {
     
     let isMultiPart: Bool
     
-    init(name: String, part1Url: URL, part2Url: URL?) {
+    init(shortName: String, name: String, part1Url: URL, part2Url: URL?) {
+        self.shortName = shortName
         self.name = name
         self.part1Url = part1Url
                 

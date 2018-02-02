@@ -11,38 +11,64 @@ import UIKit
 class ViewController: UIViewController {
 
     let vipassanaManager = VipassanaManager.shared
+    let trackTemplateFactory = TrackTemplateFactory.shared
     
-    @IBOutlet weak var introButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timerButton: UIButton!
-    @IBOutlet weak var shamathaButton: UIButton!
-    @IBOutlet weak var anapanaButton: UIButton!
-    @IBOutlet weak var focusedAnapanaButton: UIButton!
-    @IBOutlet weak var topToBottomVipassanaButton: UIButton!
-    @IBOutlet weak var sweepingVipassanaButton: UIButton!
-    @IBOutlet weak var symmetricalVipassanaButton: UIButton!
-    @IBOutlet weak var scanningVipassanaButton: UIButton!
-    @IBOutlet weak var inTheMomentVipassanaButton: UIButton!
-    @IBOutlet weak var mettaButton: UIButton!
     @IBOutlet weak var totalMeditationTimeLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    
-    @IBOutlet weak var introDoneImageView: UIImageView!
-    @IBOutlet weak var dots2ImageView: UIImageView!
-    @IBOutlet weak var dots3ImageView: UIImageView!
-    @IBOutlet weak var dots4ImageView: UIImageView!
-    @IBOutlet weak var dots5ImageView: UIImageView!
-    @IBOutlet weak var dots6ImageView: UIImageView!
-    @IBOutlet weak var dots7ImageView: UIImageView!
-    @IBOutlet weak var dots8ImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImageView.clipsToBounds = true
+
+        self.titleLabel.text = trackTemplateFactory.appName
+        let trackCount = trackTemplateFactory.trackTemplates.count
+        
+        for i in 1...trackCount - 1 {
+            let trackTemplate = trackTemplateFactory.trackTemplates[i]
+            let button = VipassanaButton()
+            button.tag = i
+            button.setTitle(trackTemplate.shortName, for: .normal)
+            button.addTarget(self, action: #selector(self.didTapMeditationButton(_:)), for: .touchUpInside)
+            stackView.addArrangedSubview(button)
+            if (i < trackCount - 1) {
+                let dots = UIImageView()
+                dots.contentMode = .scaleAspectFit
+                dots.tag = i + 100
+                dots.image = #imageLiteral(resourceName: "dots")
+                dots.sizeToFit()
+                stackView.addArrangedSubview(dots)
+            }
+            button.sizeToFit()
+            
+            if i == 1 {
+                let firstDots = view.viewWithTag(101) as UIView?
+                
+                let heightOfAButton = button.frame.size.height
+                let heightOfDots = firstDots?.frame.size.height ?? 0
+                
+                let heightOfAnItem = heightOfAButton + heightOfDots + 20
+                let stackViewHeight = heightOfAnItem * CGFloat(trackTemplateFactory.trackTemplates.count)
+                
+                for constraint in stackView.constraints {
+                    if constraint.identifier == "stackViewHeightConstraint" {
+                        constraint.constant = stackViewHeight
+                    }
+                }
+                
+            }
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.layoutIfNeeded()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,59 +85,32 @@ class ViewController: UIViewController {
     
     func secureButtons() {
         let enabledLevel = vipassanaManager.user.completedTrackLevel + 1
-        introButton.isEnabled = true
-        timerButton.isEnabled = true
-        shamathaButton.isEnabled = enabledLevel > 1
-        introDoneImageView.image = enabledLevel > 1 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        anapanaButton.isEnabled = enabledLevel > 2
-        dots2ImageView.image = enabledLevel > 2 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        focusedAnapanaButton.isEnabled = enabledLevel > 3
-        dots3ImageView.image = enabledLevel > 3 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        topToBottomVipassanaButton.isEnabled = enabledLevel > 4
-        dots4ImageView.image = enabledLevel > 4 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        scanningVipassanaButton.isEnabled = enabledLevel > 5
-        dots5ImageView.image = enabledLevel > 5 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        symmetricalVipassanaButton.isEnabled = enabledLevel > 6
-        dots6ImageView.image = enabledLevel > 6 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        sweepingVipassanaButton.isEnabled = enabledLevel > 7
-        dots7ImageView.image = enabledLevel > 7 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        inTheMomentVipassanaButton.isEnabled = enabledLevel > 8
-        dots8ImageView.image = enabledLevel > 8 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
-        mettaButton.isEnabled = enabledLevel > 9
+        let alwaysEnable = !trackTemplateFactory.requireMeditationsBeDoneInOrder
+        let totalTrackCount = trackTemplateFactory.trackTemplates.count
         
-        var contentOffset:CGPoint
-        switch enabledLevel {
-        case 0,1,2:
-            contentOffset = introButton.frame.origin
-            break;
-        case 3:
-            contentOffset = introDoneImageView.frame.origin
-            break;
-        case 4:
-            contentOffset = dots2ImageView.frame.origin
-            break;
-        case 5:
-            contentOffset = dots3ImageView.frame.origin
-            break;
-        case 6:
-            contentOffset = dots4ImageView.frame.origin
-            break;
-        case 7:
-            contentOffset = dots5ImageView.frame.origin
-            break;
-        case 8:
-            contentOffset = dots6ImageView.frame.origin
-            break;
-        case 9:
-            contentOffset = dots7ImageView.frame.origin
-            break;
-        case 10:
-            contentOffset = dots8ImageView.frame.origin
-            break;
-        default:
-            contentOffset = introButton.frame.origin
-            break;
+        timerButton.isEnabled = true
+
+        var contentOffset = CGPoint(x:0, y:0)
+
+        for i in 1...totalTrackCount - 1 {
+            let isNotLastTrack = i < totalTrackCount - 1
+            let button = view.viewWithTag(i) as! UIButton
+            button.isEnabled = alwaysEnable || enabledLevel > i - 1
+            if isNotLastTrack {
+                let dots = view.viewWithTag(i + 100) as! UIImageView
+                dots.image = alwaysEnable || enabledLevel > i - 1 ? #imageLiteral(resourceName: "dots") : #imageLiteral(resourceName: "dots copy")
+                if enabledLevel == i + 1 {
+                    contentOffset = dots.frame.origin
+                }
+            } else if enabledLevel == totalTrackCount {
+                contentOffset = button.frame.origin
+            }
         }
+
+        if (alwaysEnable) {
+            contentOffset = CGPoint(x:0, y:0)
+        }
+        
         let bottomOffset = CGPoint(x:0, y:self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
         if (contentOffset.y > bottomOffset.y) {
             contentOffset = bottomOffset
@@ -193,13 +192,13 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapMeditationButton(_ sender: UIButton) {
+    @objc func didTapMeditationButton(_ sender: UIButton) {
         let trackLevel = sender.tag
         presentCountdownLengthAlert(trackLevel)
     }
     
     @IBAction func didTapInfoButton(_ sender: UIButton) {
-        UIApplication.shared.openURL(URL(string: "http://www.guidedmeditationtreks.com/vipassana")!)
+        UIApplication.shared.openURL(URL(string: trackTemplateFactory.appUrl)!)
     }
 
 }

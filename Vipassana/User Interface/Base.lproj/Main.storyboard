@@ -42,8 +42,8 @@
                                 <color key="textColor" red="0.72549019609999998" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vipassana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-Mi-uFM">
-                                <rect key="frame" x="106" y="40" width="163.5" height="47.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4B-Mi-uFM">
+                                <rect key="frame" x="110" y="40" width="155.5" height="47.5"/>
                                 <fontDescription key="fontDescription" name="CoffeeService" family="Coffee Service" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,143 +58,17 @@
                                 <rect key="frame" x="20" y="188" width="335" height="428.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="34n-C4-9v6">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="570"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-7U-8My" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.55686274509803924" green="0.49019607843137253" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Introduction">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuJ-ol-6wj"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="1iA-Lr-pRL">
-                                                <rect key="frame" x="0.0" y="35" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1P-it-Z4e" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="60" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Shamatha">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJo-Ja-jYI"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="BEn-7T-tfG">
-                                                <rect key="frame" x="0.0" y="95" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eQ-rh-IWm" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="120" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Anapana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H18-7S-PIl"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-t2-8Zu">
-                                                <rect key="frame" x="0.0" y="155" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEw-c1-Nr6" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="180" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Focused Anapana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I2f-EO-G7h"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="qZf-Ee-oKk">
-                                                <rect key="frame" x="0.0" y="215" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-Zm-vaM" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="240" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Vipassana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rU6-FI-qqs"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="k1W-oI-Mth">
-                                                <rect key="frame" x="0.0" y="275" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eep-ao-5A7" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="300" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Scanning Vipassana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15v-oI-dF7"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="ahE-sW-KbZ">
-                                                <rect key="frame" x="0.0" y="335" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHZ-ed-0dI" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="360" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Symmetrical Vipassana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ba7-fc-AvV"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="nec-FR-VMC">
-                                                <rect key="frame" x="0.0" y="395" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-Fv-Ity" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="420" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Sweeping Vipassana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUo-JA-ouW"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="yl1-nO-esa">
-                                                <rect key="frame" x="0.0" y="455" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itK-4R-E6l" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="480" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="In the Moment Vipassana">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6p-JO-zHq"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots copy" translatesAutoresizingMaskIntoConstraints="NO" id="TjV-JJ-AKD">
-                                                <rect key="frame" x="0.0" y="515" width="335" height="20"/>
-                                            </imageView>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUz-FF-pwt" customClass="VipassanaButton" customModule="Vipassana" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="540" width="335" height="30"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.49019607840000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Metta">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapMeditationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkc-8a-ZeE"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" identifier="stackViewHeightConstraint" id="y8w-Pc-U5t"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="trailing" secondItem="ssh-KU-NFG" secondAttribute="trailing" id="0dW-r2-Z8s"/>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="top" secondItem="ssh-KU-NFG" secondAttribute="top" id="Mfd-zQ-bWW"/>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="width" secondItem="ssh-KU-NFG" secondAttribute="width" id="R1a-GE-grU"/>
-                                    <constraint firstItem="34n-C4-9v6" firstAttribute="bottom" secondItem="ssh-KU-NFG" secondAttribute="bottom" id="W5o-Yo-ECN"/>
+                                    <constraint firstItem="34n-C4-9v6" firstAttribute="bottom" secondItem="ssh-KU-NFG" secondAttribute="bottom" identifier="stackViewBottomConstraint" id="W5o-Yo-ECN"/>
                                     <constraint firstItem="34n-C4-9v6" firstAttribute="leading" secondItem="ssh-KU-NFG" secondAttribute="leading" id="tZt-dj-2Ks"/>
                                 </constraints>
                             </scrollView>
@@ -208,12 +82,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ssh-KU-NFG" firstAttribute="bottom" secondItem="Oce-wa-iBL" secondAttribute="top" constant="-10" id="1sX-fV-bWo"/>
                             <constraint firstItem="N04-hg-Cbz" firstAttribute="centerY" secondItem="W4B-Mi-uFM" secondAttribute="centerY" id="2D8-mC-GMr"/>
                             <constraint firstItem="Oce-wa-iBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2yf-ta-pGb"/>
                             <constraint firstItem="P2d-6o-RFe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8KX-h7-L29"/>
                             <constraint firstItem="W4B-Mi-uFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8pJ-kb-fFD"/>
                             <constraint firstItem="Oce-wa-iBL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="F4I-IW-9SG"/>
-                            <constraint firstItem="Oce-wa-iBL" firstAttribute="top" secondItem="ssh-KU-NFG" secondAttribute="bottom" constant="10" id="I5A-zy-4PJ"/>
                             <constraint firstItem="AE2-4X-tmF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KPD-ZK-3IT"/>
                             <constraint firstItem="ssh-KU-NFG" firstAttribute="top" secondItem="AE2-4X-tmF" secondAttribute="bottom" constant="10" id="Kgl-wP-X3i"/>
                             <constraint firstItem="W4B-Mi-uFM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="MgE-KE-vzj"/>
@@ -230,27 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="anapanaButton" destination="2eQ-rh-IWm" id="1nG-VI-en9"/>
                         <outlet property="backgroundImageView" destination="P2d-6o-RFe" id="jrd-uV-6tw"/>
-                        <outlet property="dots2ImageView" destination="rxJ-t2-8Zu" id="m8n-6n-5db"/>
-                        <outlet property="dots3ImageView" destination="qZf-Ee-oKk" id="nCO-hn-eUD"/>
-                        <outlet property="dots4ImageView" destination="k1W-oI-Mth" id="AuT-ee-5zC"/>
-                        <outlet property="dots5ImageView" destination="ahE-sW-KbZ" id="zAx-Ob-dYd"/>
-                        <outlet property="dots6ImageView" destination="nec-FR-VMC" id="IXV-OM-P83"/>
-                        <outlet property="dots7ImageView" destination="yl1-nO-esa" id="Ifd-RE-dSb"/>
-                        <outlet property="dots8ImageView" destination="TjV-JJ-AKD" id="mIm-bQ-3MJ"/>
-                        <outlet property="focusedAnapanaButton" destination="ZEw-c1-Nr6" id="TgS-66-bRh"/>
-                        <outlet property="inTheMomentVipassanaButton" destination="itK-4R-E6l" id="S8e-rB-I1n"/>
-                        <outlet property="introButton" destination="mVN-7U-8My" id="J1Z-Sg-yiu"/>
-                        <outlet property="introDoneImageView" destination="BEn-7T-tfG" id="f7W-P5-yCn"/>
-                        <outlet property="mettaButton" destination="tUz-FF-pwt" id="YDX-R9-bTv"/>
-                        <outlet property="scanningVipassanaButton" destination="Eep-ao-5A7" id="P5R-IN-PiG"/>
                         <outlet property="scrollView" destination="ssh-KU-NFG" id="QKg-Ij-crl"/>
-                        <outlet property="shamathaButton" destination="o1P-it-Z4e" id="k9t-Y2-d5E"/>
-                        <outlet property="sweepingVipassanaButton" destination="3XB-Fv-Ity" id="ilm-6C-Bl7"/>
-                        <outlet property="symmetricalVipassanaButton" destination="PHZ-ed-0dI" id="Mkr-Eo-WuP"/>
+                        <outlet property="stackView" destination="34n-C4-9v6" id="oV5-1J-tus"/>
                         <outlet property="timerButton" destination="N04-hg-Cbz" id="Mbz-QK-VtI"/>
-                        <outlet property="topToBottomVipassanaButton" destination="toc-Zm-vaM" id="zp0-r3-TBb"/>
+                        <outlet property="titleLabel" destination="W4B-Mi-uFM" id="kJb-ox-76r"/>
                         <outlet property="totalMeditationTimeLabel" destination="Oce-wa-iBL" id="IOC-x0-euK"/>
                     </connections>
                 </viewController>
@@ -269,8 +127,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="y37-OE-5YA">
                                 <rect key="frame" x="-220" y="20" width="595" height="647"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vipassana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMT-PZ-JK0">
-                                <rect key="frame" x="61" y="47" width="58" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMT-PZ-JK0">
+                                <rect key="frame" x="61" y="47" width="55.5" height="17"/>
                                 <fontDescription key="fontDescription" name="CoffeeService" family="Coffee Service" pointSize="17"/>
                                 <color key="textColor" red="0.72549019609999998" green="0.70980392160000005" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -354,6 +212,7 @@
                         <viewLayoutGuide key="safeArea" id="RDa-Hv-9TV"/>
                     </view>
                     <connections>
+                        <outlet property="appNameLabel" destination="kMT-PZ-JK0" id="PTn-38-SkP"/>
                         <outlet property="backButton" destination="3LO-sK-Duk" id="6sN-cu-9zL"/>
                         <outlet property="backgroundButton" destination="aUh-cx-W0r" id="ED6-9k-SkT"/>
                         <outlet property="blackBackgroundButton" destination="iwN-7F-pFK" id="UNW-Vb-RsZ"/>
@@ -372,8 +231,6 @@
         <image name="background" width="5472" height="2971"/>
         <image name="buddha" width="375" height="459"/>
         <image name="clock" width="31" height="30"/>
-        <image name="dots" width="6" height="20"/>
-        <image name="dots copy" width="6" height="20"/>
         <image name="info2" width="30" height="30"/>
         <image name="pause" width="100" height="100"/>
     </resources>
