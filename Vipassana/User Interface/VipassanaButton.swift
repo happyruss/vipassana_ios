@@ -35,7 +35,7 @@ class VipassanaButton: UIButton {
         }
     }
     
-    var cornerRadius: CGFloat = 20 {
+    var cornerRadius: CGFloat = 25 {
         didSet {
             updateCornerRadius()
         }

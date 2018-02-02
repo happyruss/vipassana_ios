@@ -160,6 +160,8 @@ class ViewController: UIViewController {
                 self.presentInvalidCustomCountdownAlert(trackLevel: trackLevel, minDurationMinutes: minDurationMinutes)
             }
         }))
+        alert2.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
+        }))
         self.present(alert2, animated: true, completion: nil)
     }
     
@@ -172,7 +174,7 @@ class ViewController: UIViewController {
             self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationSeconds)
         } else {
             
-            let alert = UIAlertController(title: "Meditate", message: "Select a meditation length", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Meditate", message: "Select a meditation length \n(minimum is first)", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "\(minDurationMinutes) Minutes", style: UIAlertActionStyle.default, handler: { action in
                 self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationMinutes * 60)
             }))
@@ -181,12 +183,14 @@ class ViewController: UIViewController {
             }))
             
             if (self.vipassanaManager.user.customMeditationDurationMinutes > minDurationMinutes) {
-                alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.destructive, handler: { action in
+                alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.default, handler: { action in
                     self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: self.vipassanaManager.user.customMeditationDurationMinutes * 60)
                 }))
             }
-            alert.addAction(UIAlertAction(title: "Custom Time", style: UIAlertActionStyle.cancel, handler: { action in
+            alert.addAction(UIAlertAction(title: "Enter Custom Time", style: UIAlertActionStyle.destructive, handler: { action in
                 self.presentCustomCountdownAlert(trackLevel: trackLevel, minDurationMinutes: minDurationMinutes)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
             }))
             self.present(alert, animated: true, completion: nil)
         }
