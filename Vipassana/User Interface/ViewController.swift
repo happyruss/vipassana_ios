@@ -127,7 +127,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func presentInvalidCustomCountdownAlert(trackLevel: Int, minDurationMinutes: Int) {
-        let alert = UIAlertController(title: "Meditate", message: "Length for this meditation must be at least \(minDurationMinutes) minutes.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Work Dilligently", message: "Length for this meditation must be at least \(minDurationMinutes) minutes.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
             self.presentCustomCountdownAlert(trackLevel: trackLevel, minDurationMinutes: minDurationMinutes)
         }))
@@ -137,11 +137,19 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @objc func textFieldTouched(textField: UITextField) {
+        textField.text = ""
+    }
+    
     fileprivate func presentCustomCountdownAlert(trackLevel: Int, minDurationMinutes: Int) {
         let alert2 = UIAlertController(title: "Meditate", message: "Enter a meditation length", preferredStyle: UIAlertControllerStyle.alert)
+
+        let defaultDurationMinutes = self.vipassanaManager.user.customMeditationDurationMinutes > minDurationMinutes ? self.vipassanaManager.user.customMeditationDurationMinutes : minDurationMinutes
         alert2.addTextField { (textField) in
-            textField.placeholder = "\(self.vipassanaManager.user.customMeditationDurationMinutes)"
+            textField.placeholder = "\(minDurationMinutes) minutes minimum"
+            textField.text = String(defaultDurationMinutes)
             textField.keyboardType = .numberPad
+            textField.addTarget(self, action: #selector(self.textFieldTouched), for: UIControlEvents.touchDown)
         }
         alert2.addAction(UIAlertAction(title: "Submit", style: UIAlertActionStyle.default, handler: { action in
             let value = alert2.textFields?[0].text
@@ -174,20 +182,18 @@ class ViewController: UIViewController {
             self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationSeconds)
         } else {
             
-            let alert = UIAlertController(title: "Meditate", message: "Select a meditation length \n(minimum is first)", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "\(minDurationMinutes) Minutes", style: UIAlertActionStyle.default, handler: { action in
+            let alert = UIAlertController(title: "Meditate", message: "Select a meditation length", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "\(minDurationMinutes) minutes (minimum)", style: UIAlertActionStyle.default, handler: { action in
                 self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: minDurationMinutes * 60)
             }))
-            alert.addAction(UIAlertAction(title: "60 Minutes", style: UIAlertActionStyle.default, handler: { action in
+            alert.addAction(UIAlertAction(title: "45 minutes", style: UIAlertActionStyle.default, handler: { action in
+                self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: 45 * 60)
+            }))
+            alert.addAction(UIAlertAction(title: "60 minutes (recommended)", style: UIAlertActionStyle.default, handler: { action in
                 self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: 60 * 60)
             }))
             
-            if (self.vipassanaManager.user.customMeditationDurationMinutes > minDurationMinutes) {
-                alert.addAction(UIAlertAction(title: "\(self.vipassanaManager.user.customMeditationDurationMinutes) Minutes", style: UIAlertActionStyle.destructive, handler: { action in
-                    self.runMeditation(trackLevel: trackLevel, totalDurationSeconds: self.vipassanaManager.user.customMeditationDurationMinutes * 60)
-                }))
-            }
-            alert.addAction(UIAlertAction(title: "Enter Custom Time", style: UIAlertActionStyle.destructive, handler: { action in
+            alert.addAction(UIAlertAction(title: "Custom Time", style: UIAlertActionStyle.default, handler: { action in
                 self.presentCustomCountdownAlert(trackLevel: trackLevel, minDurationMinutes: minDurationMinutes)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
