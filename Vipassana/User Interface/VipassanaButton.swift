@@ -11,7 +11,7 @@ import UIKit
 class VipassanaButton: UIButton {
     
     let minimalTitleSpinnerSpacing: CGFloat = 10
-    let contentInsets = UIEdgeInsets(top: 15, left: 15, bottom: 9, right: 15) //slight vertical offset due to the Coffee font
+    let contentInsets = UIEdgeInsets(top: 14, left: 15, bottom: 10, right: 15) //slight vertical offset due to the Coffee font
     
     var titleFont: UIFont = UIFont(name:UIFont.fontNames(forFamilyName: "Coffee Service")[0], size: 24)! {
         didSet {
