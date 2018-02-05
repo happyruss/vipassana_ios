@@ -61,6 +61,8 @@ If you decide to use this open source code, please be kind enough to not make it
 1. You should change ALL of the assets located within Assets.xcassets folder to use your own, and change the storyboard to point to YOUR assets, not mine!
 2. You MUST change the LaunchScreen.storyboard to make your own splash screen.
 
+If you like the graphic design and UX design in this app, contact their maker, Daniel Boros at Brijoy0011@yahoo.com to have him create some assets for you!
+
 Feel free to use any of this code as you see fit, but ....
 
 Failure to respect my copyrights, logos, or designs will result in bad karma!
