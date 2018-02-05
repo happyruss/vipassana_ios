@@ -57,7 +57,7 @@ As far as functionality, that's all you need to change. However...
 Please use your own graphics and intro screen!!!!
 =================================================
 
-If you decide to use this open source code, please be kind enough to not make it look like it is from Guided Meditation Treks. If you want to give a shout out that you used my code, that's great, but the audio assets are all yours, and if it looks like it's from me, I'll submit a complaint for infringement. This also goes for the assets and the use of the GMT logo. This means, 
+If you decide to use this open source code, DO NOT make it look like it is from Guided Meditation Treks. Make it your own! If you want to give a shout out that you used my code, that's great, but the audio assets are all yours, and if it looks like it's from me, I'll submit a complaint for infringement. This also goes for the assets and the use of the GMT logo. This means, 
 1. You should change ALL of the assets located within Assets.xcassets folder to use your own, and change the storyboard to point to YOUR assets, not mine!
 2. You MUST change the LaunchScreen.storyboard to make your own splash screen.
 
