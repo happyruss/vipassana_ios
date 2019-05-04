@@ -49,6 +49,7 @@ class MeditationViewController: UIViewController, TrackDelegate {
         playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControlState.normal)
         playPauseButton.isHidden = false
         isInMeditation = true
+        vipassanaManager.userStartedTrack()
     }
     
     @IBAction func didTapPlayPause(_ sender: Any) {
@@ -104,6 +105,7 @@ class MeditationViewController: UIViewController, TrackDelegate {
         playPauseButton.isHidden = true
         blackBackgroundButton.isHidden = true
         isInMeditation = false
+        self.goBackToMainScreen()
     }
 }
 

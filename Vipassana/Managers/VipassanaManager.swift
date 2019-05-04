@@ -59,11 +59,19 @@ class VipassanaManager {
         activeTrack = nil
     }
     
-    public func userCompletedTrack() {
+    private func setTrackCompletetion() {
         if (activeTrackLevel > self.user.completedTrackLevel) {
             self.user.completedTrackLevel = activeTrackLevel
             defaults.set(activeTrackLevel, forKey: "SavedCompletedLevel")
         }
+    }
+
+    public func userStartedTrack() {
+        self.setTrackCompletetion()
+    }
+
+    public func userCompletedTrack() {
+        self.setTrackCompletetion()
     }
     
     public func setDefaultDurationMinutes(durationMinutes: Int) {
