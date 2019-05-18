@@ -97,15 +97,19 @@ class MeditationViewController: UIViewController, TrackDelegate {
     
     func trackTimeRemainingUpdated(timeRemaining: Int) {
         vipassanaManager.incrementTotalSecondsInMeditation()
-        countdownLabel.text = String(format: "%d", arguments: [(timeRemaining / 60)]) + ":" + String(format: "%02d", arguments: [((timeRemaining % 3600) % 60)])
+        DispatchQueue.main.async {
+            self.countdownLabel.text = String(format: "%d", arguments: [(timeRemaining / 60)]) + ":" + String(format: "%02d", arguments: [((timeRemaining % 3600) % 60)])
+        }
     }
     
     func trackEnded() {
         vipassanaManager.userCompletedTrack()
-        playPauseButton.isHidden = true
-        blackBackgroundButton.isHidden = true
+        DispatchQueue.main.async {
+            self.playPauseButton.isHidden = true
+            self.blackBackgroundButton.isHidden = true
+            self.goBackToMainScreen()
+        }
         isInMeditation = false
-        self.goBackToMainScreen()
     }
 }
 
