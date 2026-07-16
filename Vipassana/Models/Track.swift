@@ -9,7 +9,7 @@
 import Foundation
 import AVKit
 
-protocol TrackDelegate: class {
+protocol TrackDelegate: AnyObject {
     func trackTimeRemainingUpdated(timeRemaining: Int)
     func trackEnded()
 }
@@ -95,7 +95,7 @@ class Track {
     
     fileprivate func setupAudio() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.mixWithOthers)
+            try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
             do {
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch let error as NSError {

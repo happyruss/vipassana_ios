@@ -30,7 +30,7 @@ class VipassanaButton: UIButton {
         }
     }
     
-    var underlineStyle: NSUnderlineStyle = NSUnderlineStyle.styleNone {
+    var underlineStyle: NSUnderlineStyle = [] {
         didSet {
         }
     }
@@ -125,10 +125,10 @@ class VipassanaButton: UIButton {
         }
 
         let title = NSAttributedString(string: currentTitle, attributes: [
-            NSAttributedStringKey.kern: kernValue,
-            NSAttributedStringKey.foregroundColor: foregroundColor,
-            NSAttributedStringKey.paragraphStyle: paragraphStyle,
-            NSAttributedStringKey.underlineStyle: underlineStyle.rawValue
+            .kern: kernValue,
+            .foregroundColor: foregroundColor,
+            .paragraphStyle: paragraphStyle,
+            .underlineStyle: underlineStyle.rawValue
             ])
         
         self.updateCornerRadius()

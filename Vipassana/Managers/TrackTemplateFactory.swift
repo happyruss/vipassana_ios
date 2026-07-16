@@ -14,7 +14,7 @@ class TrackTemplateFactory {
 
     let appName = "Vipassana"
     let requireMeditationsBeDoneInOrder = true
-    let appUrl = "http://www.guidedmeditationtreks.com/vipassana"
+    let appUrl = "https://meditationtreks.com/vipassana"
     
     var trackTemplates = [TrackTemplate]()
     var minimumTrackDuration = 0

@@ -46,7 +46,7 @@ class MeditationViewController: UIViewController, TrackDelegate {
         meditationNameLabel.text = trackTemplate.name
         vipassanaManager.playTrackAtLevel(trackLevel: trackLevel, gapDuration: gapDuration)
         vipassanaManager.activeTrack?.delegate = self
-        playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControlState.normal)
+        playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         playPauseButton.isHidden = false
         isInMeditation = true
         vipassanaManager.userStartedTrack()
@@ -58,9 +58,9 @@ class MeditationViewController: UIViewController, TrackDelegate {
             return
         }
         if activeTrack.isPaused {
-            playPauseButton.setImage(#imageLiteral(resourceName: "play-button"), for: UIControlState.normal)
+            playPauseButton.setImage(#imageLiteral(resourceName: "play-button"), for: .normal)
         } else {
-            playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControlState.normal)
+            playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         }
     }
     
@@ -81,11 +81,11 @@ class MeditationViewController: UIViewController, TrackDelegate {
 
     @IBAction func didTapBackButton(_ sender: UIButton) {
         if (isInMeditation) {
-            let alert = UIAlertController(title: "Meditation Underway", message: "Would you like to stop the current session?", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
+            let alert = UIAlertController(title: "Meditation Underway", message: "Would you like to stop the current session?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 self.goBackToMainScreen()
             }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
                 
             }))
             self.present(alert, animated: true, completion: nil)
