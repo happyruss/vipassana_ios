@@ -1,5 +1,10 @@
 
+AudioAssets/
+xcuserdata/
+*.xcuserstate
+/vipassana_ios/
 *.ipa
 *.app.dSYM.zip
 fastlane/report.xml
+fastlane/README.md
 Gemfile.lock
