@@ -9,7 +9,7 @@ Besides providing your own audio, and your own graphics, these are the only code
 
 1. Pull down the code locally
 2. Open it in Xcode
-3. Dump your audio assets in the /AudioAssets/ folder in the root (you can have 1 or 2 parts for each meditation... see below for details)
+3. Dump your audio assets in the Vipassana/AudioAssets/ folder (you can have 1 or 2 parts for each meditation... see below for details)
 3. Make modifications to TrackTemplateFactory.swift like so:
 
 ```

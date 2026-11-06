@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+"$SCRIPT_DIR/check-audio.sh"
+cd "$SCRIPT_DIR/.."
 xcodebuild -scheme Vipassana -destination 'generic/platform=iOS' build
 DEST="${1:-platform=iOS Simulator,name=iPhone 16}"
 if xcodebuild -scheme Vipassana -destination "$DEST" -showBuildSettings >/dev/null 2>&1; then

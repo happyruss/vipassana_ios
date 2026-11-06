@@ -25,7 +25,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FONT-DINER-Coffee-Service.otf</string>
-		<string>SF-Pro-Text-Semibold.otf</string>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
