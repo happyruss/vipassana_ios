@@ -1,0 +1,1 @@
+Version 1.5: compliance and reliability update for current iOS and Android. Refreshed listing copy and support links. Improved background playback on Android. No subscription—same offline guided path.

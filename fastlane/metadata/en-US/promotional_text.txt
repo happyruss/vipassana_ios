@@ -1,0 +1,1 @@
+Fresh build for current iOS and Android. Updated store copy, privacy compliance, and reliable background audio on Android. Same guided path—offline, no subscription.

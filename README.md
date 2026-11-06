@@ -67,3 +67,18 @@ Feel free to use any of this code as you see fit, but ....
 
 Failure to respect my copyrights, logos, or designs will result in bad karma!
 =============================================================================
+
+## Store updates (Fastlane)
+
+Sibling repo: `meditation-treks`. Listing copy: `docs/store/copy/vipassana/`.
+
+```bash
+bundle install
+bundle exec fastlane upload_listing   # metadata only (no screenshots)
+bundle exec fastlane beta             # TestFlight
+bundle exec fastlane submit_release   # App Review — only when ready
+```
+
+Orchestrated beta ship from the hub: `meditation-treks/scripts/ship-beta-vipassana.sh`.
+
+Requires local `Vipassana/AudioAssets/` and App Store Connect API key in `~/.appstoreconnect/`.

@@ -1,0 +1,257 @@
+# frozen_string_literal: true
+
+default_platform(:ios)
+
+APP_STORE_CONNECT_DIR = File.expand_path("~/.appstoreconnect")
+TESTFLIGHT_BETA_TESTER_EMAIL = "rdobda@yahoo.com"
+TESTFLIGHT_BETA_GROUP_NAME = "Beta Testers"
+APP_IDENTIFIER = "com.russellEricDobda.Vipassana"
+
+def app_store_connect_key_filepath
+  Dir.glob(File.join(APP_STORE_CONNECT_DIR, "AuthKey_*.p8")).first
+end
+
+def app_store_connect_key_id
+  env = ENV["APP_STORE_CONNECT_KEY_ID"].to_s
+  return env unless env.empty?
+
+  path = app_store_connect_key_filepath
+  return nil if path.nil?
+
+  match = File.basename(path).match(/\AAuthKey_(.+)\.p8\z/)
+  match&.[](1)
+end
+
+def app_store_connect_credentials_present?
+  return false unless Dir.exist?(APP_STORE_CONNECT_DIR)
+  return false if app_store_connect_key_id.to_s.empty?
+  return false if ENV["APP_STORE_CONNECT_ISSUER_ID"].to_s.empty?
+
+  !app_store_connect_key_filepath.nil?
+end
+
+def app_store_connect_api_key_hash
+  key_id = app_store_connect_key_id
+  UI.user_error!("No AuthKey_*.p8 found in #{APP_STORE_CONNECT_DIR}") if key_id.nil?
+
+  {
+    key_id: key_id,
+    issuer_id: ENV.fetch("APP_STORE_CONNECT_ISSUER_ID"),
+    key_filepath: app_store_connect_key_filepath
+  }
+end
+
+def spaceship_api_key_hash
+  app_store_connect_api_key_hash.merge(filepath: app_store_connect_key_filepath)
+end
+
+def app_store_connect_api_key_from_home
+  app_store_connect_api_key(**app_store_connect_api_key_hash.merge(duration: 1200, in_house: false))
+end
+
+def resolve_testflight_distribution
+  env_group = ENV["TESTFLIGHT_BETA_GROUP"].to_s.strip
+  env_group = TESTFLIGHT_BETA_GROUP_NAME if env_group.empty?
+
+  require "pilot/manager"
+
+  manager = Pilot::Manager.new
+  manager.start(
+    {
+      api_key: spaceship_api_key_hash,
+      app_identifier: APP_IDENTIFIER
+    }
+  )
+  app = manager.app
+  external_groups = app.get_beta_groups.reject(&:is_internal_group)
+
+  named = external_groups.find { |group| group.name == env_group }
+  if named
+    return { mode: :external, group_name: named.name }
+  end
+
+  if !ENV["TESTFLIGHT_BETA_GROUP"].to_s.strip.empty?
+    names = external_groups.map(&:name)
+    UI.important(
+      "TestFlight group '#{env_group}' not found (available: #{names.empty? ? 'none' : names.join(', ')}). " \
+      "Using internal distribution."
+    )
+  end
+
+  target_email = TESTFLIGHT_BETA_TESTER_EMAIL.downcase
+  internal_tester = app.get_beta_testers.any? { |tester| tester.email&.downcase == target_email }
+  return { mode: :internal } if internal_tester || external_groups.empty?
+
+  return { mode: :external, group_name: external_groups.first.name } if external_groups.size == 1
+
+  names = external_groups.map(&:name)
+  UI.user_error!(
+    "No internal tester for #{TESTFLIGHT_BETA_TESTER_EMAIL} and ambiguous external groups: #{names.join(', ')}"
+  )
+end
+
+def ensure_testflight_beta_tester!(group_name)
+  require "pilot/tester_manager"
+
+  Pilot::TesterManager.new.add_tester(
+    {
+      api_key: spaceship_api_key_hash,
+      app_identifier: APP_IDENTIFIER,
+      email: TESTFLIGHT_BETA_TESTER_EMAIL,
+      groups: [group_name]
+    }
+  )
+rescue StandardError => e
+  UI.important("TestFlight tester setup skipped or already configured: #{e.message}")
+end
+
+def sync_store_listing_from_hub!
+  script = File.expand_path("../../meditation-treks/scripts/sync-fastlane-listing-vipassana.sh", __dir__)
+  unless File.exist?(script)
+    UI.user_error!("Missing sync script at #{script} — clone meditation-treks alongside vipassana_ios.")
+  end
+
+  sh(script)
+end
+
+def deliver_submission_information
+  {
+    add_id_info_uses_idfa: false,
+    export_compliance_uses_encryption: false,
+    export_compliance_encryption_updated: false,
+    content_rights_contains_third_party_content: false
+  }
+end
+
+def testflight_beta_upload_options(api_key, distribution, distribute_only: false, build_number: nil)
+  build = build_number || ENV["BUILD_NUMBER"].to_s.strip
+  options = {
+    api_key: api_key,
+    skip_waiting_for_build_processing: false,
+    wait_processing_timeout_duration: 3600,
+    uses_non_exempt_encryption: false,
+    distribute_only: distribute_only
+  }
+
+  if distribution[:mode] == :internal
+    options[:distribute_external] = false
+    options[:submit_beta_review] = false
+  else
+    options.merge!(
+      distribute_external: true,
+      groups: [distribution[:group_name]],
+      notify_external_testers: true,
+      submit_beta_review: true,
+      changelog: ENV.fetch("TESTFLIGHT_BETA_CHANGELOG") { "Vipassana 1.5 beta build #{build.empty? ? 'update' : build}" }
+    )
+  end
+
+  options[:build_number] = build unless build.empty?
+  options
+end
+
+platform :ios do
+  desc "Sync hub listing and upload metadata to ASC (no screenshots, no binary)"
+  lane :upload_listing do |options|
+    sync_store_listing_from_hub!
+    UI.user_error!("Missing App Store Connect API credentials") unless app_store_connect_credentials_present?
+
+    app_version = options[:app_version] || ENV.fetch("APP_VERSION", "1.5")
+    api_key = app_store_connect_api_key_from_home
+
+    deliver(
+      api_key: api_key,
+      app_version: app_version,
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      skip_metadata: false,
+      force: true,
+      submit_for_review: false,
+      automatic_release: false,
+      run_precheck_before_submit: false,
+      precheck_include_in_app_purchases: false,
+      submission_information: deliver_submission_information
+    )
+  end
+
+  desc "Sync listing, attach build, and submit for App Store review"
+  lane :submit_release do |options|
+    sync_store_listing_from_hub!
+    UI.user_error!("Missing App Store Connect API credentials") unless app_store_connect_credentials_present?
+
+    app_version = options[:app_version] || ENV.fetch("APP_VERSION", "1.5")
+    build_number = options[:build_number] || ENV.fetch("BUILD_NUMBER", "21")
+    submit = options.fetch(:submit_for_review, ENV.fetch("SUBMIT_FOR_REVIEW", "true") == "true")
+
+    api_key = app_store_connect_api_key_from_home
+
+    deliver(
+      api_key: api_key,
+      app_version: app_version,
+      build_number: build_number,
+      primary_category: "HEALTH_AND_FITNESS",
+      skip_binary_upload: true,
+      skip_screenshots: true,
+      skip_metadata: false,
+      force: true,
+      submit_for_review: submit,
+      automatic_release: false,
+      run_precheck_before_submit: false,
+      precheck_include_in_app_purchases: false,
+      submission_information: deliver_submission_information
+    )
+  end
+
+  desc "Alias for submit_release"
+  lane :submit_app_store do |options|
+    submit_release(options)
+  end
+
+  desc "Run checks, archive release build, upload to TestFlight, and distribute to beta tester"
+  lane :beta do
+    sh("../Scripts/check.sh")
+
+    build_app(
+      project: "Vipassana.xcodeproj",
+      scheme: "Vipassana",
+      configuration: "Release",
+      export_method: "app-store",
+      clean: true
+    )
+
+    upload_and_distribute_testflight_beta
+  end
+
+  desc "Distribute the latest processed TestFlight build (no rebuild)"
+  lane :distribute_beta do |options|
+    upload_and_distribute_testflight_beta(
+      distribute_only: true,
+      build_number: options[:build_number] || ENV["BUILD_NUMBER"]
+    )
+  end
+
+  private_lane :upload_and_distribute_testflight_beta do |options|
+    distribute_only = options.fetch(:distribute_only, false)
+    build_number = options[:build_number]
+
+    UI.user_error!("Missing App Store Connect API credentials") unless app_store_connect_credentials_present?
+
+    api_key = app_store_connect_api_key_from_home
+    distribution = resolve_testflight_distribution
+    if distribution[:mode] == :external
+      ensure_testflight_beta_tester!(distribution[:group_name])
+      UI.message("Distributing build to external TestFlight group: #{distribution[:group_name]}")
+    else
+      UI.message("Distributing build to internal TestFlight tester: #{TESTFLIGHT_BETA_TESTER_EMAIL}")
+    end
+
+    upload_to_testflight(
+      **testflight_beta_upload_options(
+        api_key,
+        distribution,
+        distribute_only: distribute_only,
+        build_number: build_number
+      )
+    )
+  end
+end
