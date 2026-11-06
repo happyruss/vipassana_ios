@@ -1,6 +1,5 @@
 
-
-AudioAssets/
-xcuserdata/
-*.xcuserstate
-/vipassana_ios/
+*.ipa
+*.app.dSYM.zip
+fastlane/report.xml
+Gemfile.lock
