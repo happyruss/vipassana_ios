@@ -73,4 +73,4 @@ cd vipassana_ios && bundle exec fastlane distribute_beta
 
 Do **not** run `submit_release` or `fastlane release` unless the user explicitly asks for production.
 
-Privacy policy: https://meditationtreks.com/privacy-policy/
+Privacy policy: https://meditationtreks.com/app-privacy-policy-html/
