@@ -31,8 +31,11 @@
 		464A06431FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A062F1FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a */; };
 		464A06451FF6F063008D8AB4 /* 04_TopToBottom.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 464A06441FF6F063008D8AB4 /* 04_TopToBottom.m4a */; };
 		4663D591201503ED00CE7E83 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4663D590201503ED00CE7E83 /* MeditationViewController.swift */; };
-		46C1BCE920164ACD00824ECE /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46C1BCE820164ACC00824ECE /* SF-Pro-Text-Semibold.otf */; };
 		46DA82672015165E00BA875D /* FONT-DINER-Coffee-Service.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46DA82662015165D00BA875D /* FONT-DINER-Coffee-Service.otf */; };
+		B15C0A150001A00000000002 /* AudioManifestCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C0A150001A00000000001 /* AudioManifestCheck.swift */; };
+		B15C0A150001A00000000005 /* CoffeeServiceFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C0A150001A00000000004 /* CoffeeServiceFont.swift */; };
+		B15C0A150001A00000000007 /* AudioManifestCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C0A150001A00000000006 /* AudioManifestCheckTests.swift */; };
+		B15C0A150001A00000000009 /* CoffeeServiceFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C0A150001A00000000008 /* CoffeeServiceFontTests.swift */; };
 		46DA826B20151ED700BA875D /* VipassanaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA826A20151ED700BA875D /* VipassanaButton.swift */; };
 		46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */; };
 		46E6CB4B1FE6EA3200F09C38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB4A1FE6EA3200F09C38 /* ViewController.swift */; };
@@ -88,8 +91,11 @@
 		464A062F1FF6EFDB008D8AB4 /* 08_InTheMoment2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 08_InTheMoment2.m4a; sourceTree = "<group>"; };
 		464A06441FF6F063008D8AB4 /* 04_TopToBottom.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04_TopToBottom.m4a; sourceTree = "<group>"; };
 		4663D590201503ED00CE7E83 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
-		46C1BCE820164ACC00824ECE /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		46DA82662015165D00BA875D /* FONT-DINER-Coffee-Service.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FONT-DINER-Coffee-Service.otf"; sourceTree = "<group>"; };
+		B15C0A150001A00000000001 /* AudioManifestCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManifestCheck.swift; sourceTree = "<group>"; };
+		B15C0A150001A00000000004 /* CoffeeServiceFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeServiceFont.swift; sourceTree = "<group>"; };
+		B15C0A150001A00000000006 /* AudioManifestCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManifestCheckTests.swift; sourceTree = "<group>"; };
+		B15C0A150001A00000000008 /* CoffeeServiceFontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeServiceFontTests.swift; sourceTree = "<group>"; };
 		46DA826A20151ED700BA875D /* VipassanaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipassanaButton.swift; sourceTree = "<group>"; };
 		46E6CB451FE6EA3200F09C38 /* Vipassana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vipassana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E6CB481FE6EA3200F09C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 			children = (
 				4630ECF91FE713E70066D5E5 /* VipassanaManager.swift */,
 				46FD68DC1FE8546300427F9C /* TrackTemplateFactory.swift */,
+				B15C0A150001A00000000001 /* AudioManifestCheck.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 				4663D590201503ED00CE7E83 /* MeditationViewController.swift */,
 				46E6CB4C1FE6EA3200F09C38 /* Main.storyboard */,
 				46DA826A20151ED700BA875D /* VipassanaButton.swift */,
+				B15C0A150001A00000000004 /* CoffeeServiceFont.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -217,7 +225,6 @@
 			children = (
 				46DA826920151EB200BA875D /* User Interface */,
 				46DA82662015165D00BA875D /* FONT-DINER-Coffee-Service.otf */,
-				46C1BCE820164ACC00824ECE /* SF-Pro-Text-Semibold.otf */,
 				4630ECFC1FE71C660066D5E5 /* AudioAssets */,
 				4630ECF81FE713CB0066D5E5 /* Managers */,
 				4630ECF31FE70C7B0066D5E5 /* Models */,
@@ -233,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				46E6CB5D1FE6EA3200F09C38 /* VipassanaTests.swift */,
+				B15C0A150001A00000000006 /* AudioManifestCheckTests.swift */,
+				B15C0A150001A00000000008 /* CoffeeServiceFontTests.swift */,
 				46E6CB5F1FE6EA3200F09C38 /* Info.plist */,
 			);
 			path = VipassanaTests;
@@ -254,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E6CB6D1FE6EA3200F09C38 /* Build configuration list for PBXNativeTarget "Vipassana" */;
 			buildPhases = (
+				B15C0A150001A00000000003 /* Check bundled audio */,
 				46E6CB411FE6EA3200F09C38 /* Sources */,
 				46E6CB421FE6EA3200F09C38 /* Frameworks */,
 				46E6CB431FE6EA3200F09C38 /* Resources */,
@@ -366,7 +376,6 @@
 				46E6CB531FE6EA3200F09C38 /* LaunchScreen.storyboard in Resources */,
 				464A06341FF6EFDB008D8AB4 /* 04_TopToBottom2.m4a in Resources */,
 				464A06401FF6EFDB008D8AB4 /* 01_Shamatha2.m4a in Resources */,
-				46C1BCE920164ACD00824ECE /* SF-Pro-Text-Semibold.otf in Resources */,
 				46E6CB501FE6EA3200F09C38 /* Assets.xcassets in Resources */,
 				46E6CB4E1FE6EA3200F09C38 /* Main.storyboard in Resources */,
 				464A063A1FF6EFDB008D8AB4 /* 05_TopToBottomBottomToTop.m4a in Resources */,
@@ -404,6 +413,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B15C0A150001A00000000003 /* Check bundled audio */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Scripts/check-audio.sh",
+				"$(SRCROOT)/Scripts/AudioManifestCheckMain.swift",
+				"$(SRCROOT)/Vipassana/Managers/AudioManifestCheck.swift",
+				"$(SRCROOT)/Vipassana/Managers/TrackTemplateFactory.swift",
+			);
+			name = "Check bundled audio";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Scripts/check-audio.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		46E6CB411FE6EA3200F09C38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -415,6 +446,8 @@
 				46E6CB4B1FE6EA3200F09C38 /* ViewController.swift in Sources */,
 				46E6CB491FE6EA3200F09C38 /* AppDelegate.swift in Sources */,
 				46FD68DD1FE8546300427F9C /* TrackTemplateFactory.swift in Sources */,
+				B15C0A150001A00000000002 /* AudioManifestCheck.swift in Sources */,
+				B15C0A150001A00000000005 /* CoffeeServiceFont.swift in Sources */,
 				4630ECF51FE70CA50066D5E5 /* Track.swift in Sources */,
 				4663D591201503ED00CE7E83 /* MeditationViewController.swift in Sources */,
 				46FD68DB1FE8545800427F9C /* TrackTemplate.swift in Sources */,
@@ -426,6 +459,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E6CB5E1FE6EA3200F09C38 /* VipassanaTests.swift in Sources */,
+				B15C0A150001A00000000007 /* AudioManifestCheckTests.swift in Sources */,
+				B15C0A150001A00000000009 /* CoffeeServiceFontTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
