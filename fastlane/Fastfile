@@ -123,6 +123,23 @@ def deliver_submission_information
   }
 end
 
+def age_rating_config_path
+  File.expand_path("age_rating_config.json", __dir__)
+end
+
+def deliver_common_options(api_key, app_version:)
+  {
+    api_key: api_key,
+    app_version: app_version,
+    app_rating_config_path: age_rating_config_path,
+    skip_binary_upload: true,
+    skip_screenshots: true,
+    run_precheck_before_submit: false,
+    precheck_include_in_app_purchases: false,
+    submission_information: deliver_submission_information
+  }
+end
+
 def testflight_beta_upload_options(api_key, distribution, distribute_only: false, build_number: nil)
   build = build_number || ENV["BUILD_NUMBER"].to_s.strip
   options = {
@@ -151,6 +168,17 @@ def testflight_beta_upload_options(api_key, distribution, distribute_only: false
 end
 
 platform :ios do
+  desc "Update App Store age rating (clears UGC flag; no listing/binary changes)"
+  lane :update_age_rating do
+    UI.user_error!("Missing App Store Connect API credentials") unless app_store_connect_credentials_present?
+
+    update_app_age_rating(
+      api_key: app_store_connect_api_key_from_home,
+      app_identifier: APP_IDENTIFIER,
+      age_rating_config_path: age_rating_config_path
+    )
+  end
+
   desc "Sync hub listing and upload metadata to ASC (no screenshots, no binary)"
   lane :upload_listing do |options|
     sync_store_listing_from_hub!
@@ -160,17 +188,11 @@ platform :ios do
     api_key = app_store_connect_api_key_from_home
 
     deliver(
-      api_key: api_key,
-      app_version: app_version,
-      skip_binary_upload: true,
-      skip_screenshots: true,
+      **deliver_common_options(api_key, app_version: app_version),
       skip_metadata: false,
       force: true,
       submit_for_review: false,
-      automatic_release: false,
-      run_precheck_before_submit: false,
-      precheck_include_in_app_purchases: false,
-      submission_information: deliver_submission_information
+      automatic_release: false
     )
   end
 
@@ -180,25 +202,19 @@ platform :ios do
     UI.user_error!("Missing App Store Connect API credentials") unless app_store_connect_credentials_present?
 
     app_version = options[:app_version] || ENV.fetch("APP_VERSION", "1.5")
-    build_number = options[:build_number] || ENV.fetch("BUILD_NUMBER", "21")
+    build_number = options[:build_number] || ENV.fetch("BUILD_NUMBER", "23")
     submit = options.fetch(:submit_for_review, ENV.fetch("SUBMIT_FOR_REVIEW", "true") == "true")
 
     api_key = app_store_connect_api_key_from_home
 
     deliver(
-      api_key: api_key,
-      app_version: app_version,
+      **deliver_common_options(api_key, app_version: app_version),
       build_number: build_number,
       primary_category: "HEALTH_AND_FITNESS",
-      skip_binary_upload: true,
-      skip_screenshots: true,
       skip_metadata: false,
       force: true,
       submit_for_review: submit,
-      automatic_release: false,
-      run_precheck_before_submit: false,
-      precheck_include_in_app_purchases: false,
-      submission_information: deliver_submission_information
+      automatic_release: false
     )
   end
 
